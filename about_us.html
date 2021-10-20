@@ -4,45 +4,21 @@
 <meta charset="utf-8">
 <link href='https://fonts.googleapis.com/css?family=Josefin Sans' rel='stylesheet'>
 <link href='https://fonts.googleapis.com/css?family=Ananda Pro' rel='stylesheet'>
+<link rel="stylesheet" href=style.css>
 <title>About Us</title>
 
 <style type="text/css">
-
-	header {
-		text-align: center;
-		color: #FF9933;
-		background-color: #003267;
-		padding: 100px 100px 100px 100px; 
-		box-sizing:border-box;
-		display: block;
-	}
-
-	h1 {
-		font-weight: 700pt;
-		font-family: "Josefin Sans";
-		font-size: 47pt;
-	}
-
-	h2 {
-		font-weight: 700pt;
-		font-family: "Josefin Sans";
-		font-size: 42pt;
-	}
-
-	h3 {
-		font-weight: 600pt;
-		font-family: "Josefin Sans";
-		font-size: 27pt;
-	}
-
 	#history {
+		background-color: #FCECC8;
+	}
+
+	#history2 {
 		font-family: "Andada Pro";
 		font-weight: 600pt;
 		font-style: italic;
 		font-size: 24pt;
 		color: #003267;
-		background-color: #FCECC8;
-		padding: 30px 200px 100px 200px; 
+		padding: 40px 200px 100px 200px;
 		box-sizing:border-box;
 		display: block;
 	}
@@ -54,7 +30,7 @@
 		font-size: 24pt;
 		color: #003267;
 		background-color: #98CCCC;
-		padding: 30px 200px 100px 200px; 
+		padding: 40px 200px 100px 200px;
 		box-sizing:border-box;
 	}
 
@@ -72,21 +48,32 @@
 </head>
 
 <body>
-	<header> 
-		<h1> Example H1 </h1>
-		<h2> Example H2 </h2>
-		<h3> Example H3 </h3>
-	</header>
+	<header>
+        <h1> Rêve au Chocolat </h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a> </li>
+                <li><a style = "text-decoration: underline; text-underline-position: under; box-sizing: border-box;" href="about_us.html">About Us</a> </li>
+                <li><a href="index.html">Shop</a> </li>
+                <li><a href="index.html">Catering</a> </li>
+                <li><a href="index.html">Gifts</a> </li>
+                <li><a href="workshops_events.html">Events</a> </li>
+                <li><a href="index.html">Contact Us</a> </li>
+            </ul>
+        </nav>
+    </header>
 
 	<div>
 		<div id='history'> 
-			<p id='title' align="center">About Us</p>
-			<p align="center"> <img src=france_bw.JPG width=70% max-width=250px> </p>
-			<br>
-			<p id='title' align="center">History</p>
-			Rêve au Chocolat was founded in 1987 by French chocolate connoisseur Jacques Dubois. After stumbling into a chocolate making course at the age of eighteen, Dubois became immediately fascinated by the art of chocolate. Just three years later, following professional culinary training at Ecole Chocolat, Dubois opened Rêve au Chocolat. 
-			<br><br>
-			Rêve au Chocolat was originally located in Kendall Square, but has since expanded in size and moved to Harvard Square.
+			<h2>About Us</h2>
+			<div id='history2'>
+				<p align="center"> <img src=france_bw.JPG width=70% max-width=250px> </p>
+				<br>
+				<p id='title' align="center">History</p>
+				Rêve au Chocolat was founded in 1987 by French chocolate connoisseur Jacques Dubois. After stumbling into a chocolate making course at the age of eighteen, Dubois became immediately fascinated by the art of chocolate. Just three years later, following professional culinary training at Ecole Chocolat, Dubois opened Rêve au Chocolat. 
+				<br><br>
+				Rêve au Chocolat was originally located in Kendall Square, but has since expanded in size and moved to Harvard Square.
+			</div>
 		</div>
 		<div id='method'>
 			<p align="center"> <img src=method.JPG width=70% max-width=250px> </p>
@@ -94,8 +81,10 @@
 			<p id='title' align="center">Our Method</p>
 			For more than three decades, Rêve au Chocolat has provided Boston with the finest chocolates. Never using molds, each of our chocolates are handcrafted over a three-day period. The unique flavor and beautiful presentation are our great pride and joy.
 		</div>
-
 	</div>
 
+	<footer>
+		&copy; 2021 Rêve au Chocolat – 23 Fausse Street, Cambridge, MA – (617) 555 0113
+	</footer>
 </body>
 </html>
