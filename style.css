@@ -1,6 +1,7 @@
 body {
     background-color: #003267;
 }
+
 h1 {
     font-family: 'Josefin Sans', sans-serif;
     font-size: 42px;
@@ -44,6 +45,16 @@ header {
     padding-bottom: 0.5%;
 }
 
+footer {
+    text-align: center;
+    padding-top: 1%;
+    padding-bottom: 0.5%;
+    width: 100%;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 15px;
+    color: #f93;
+}
+
 div.gifts {
     background-color: #98cccc;
     height: 2300px;
@@ -69,10 +80,10 @@ img.gift {
 h2 {
     font-family: 'Josefin Sans', sans-serif;
     font-size: 47px;
-    text-align: left;
+    text-align: center;
     color: #003267;
     padding-top: 100px;
-    margin-left: 8.2%;
+    /*margin-left: 8.2%;*/
 }
 
 h3 {
