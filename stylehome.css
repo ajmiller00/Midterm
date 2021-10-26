@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Andada+Pro:ital,wght@1,500&family=Josefin+Sans:ital,wght@0,700;1,600&display=swap');
+
+body {
+  margin:0;
+}
+.new_arrivals_flex{
+  padding: 0 15% 0 15%;
+  display: flex;
+  flex-flow: row wrap;
+  margin:0;
+  /* align-items: stretch; */
+  /* align-items: center; */
+}
+
+.new_arrivals_flex > div {
+  /* background-color: DodgerBlue; */
+  padding-top: 20%;
+  color: white;
+  /* margin: 10px; */
+  text-align: center;
+  line-height: 300px;
+
+}
+
+
+.bestsellers{
+  padding: 10% 10% 20% 10%;
+  background-color: #fcecc8;
+}
+.bestsellers_flex {
+  display: flex;
+  justify-content: space-around;
+}
+
+.bestsellers_flex > div{
+  padding-top: 5%;
+  color: white;
+  width: 300px;
+  margin: 0px;
+  text-align: center;
+  /* line-height: 75px; */
+  font-size: 24px;
+}
+
+h1 {
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 70px;
+  margin: 0;
+
+
+}
+
+h2{
+  font-family: 'Andada Pro', serif;
+  weight: 500;
+  padding-top: 0;
+  font-size: 24px;
+  font-style: italic;
+  line-height: 70px;
+  margin: 0;
+}
+
+p {
+  font-family: 'Andada Pro', serif;
+  weight: 500;
+  font-size: 24px;
+  font-style: italic;
+  line-height: 70px;
+  margin: 0;
+}
+
+ button{
+   font-family: 'Josefin Sans', sans-serif;
+   font-weight: 700;
+   font-size: 25px;
+   padding:10px 20px;
+   background-color: #ff9933;
+   color: #003267;
+   border: none;
+   cursor:pointer;
+   -webkit-border-radius: 5px;
+   border-radius: 4px;
+ }
