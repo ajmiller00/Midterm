@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catering Information</title>
+    <link rel = "stylesheet" type = "text/css" href = "style.css">
+    <style type="text/css">
+        #catering {
+            background-color: #FCECC8;
+        }
+        head, body {font-size:30pt;}
+        .tab {
+            display: inline-block;
+            margin-right: 40px;
+            font-size:20pt;
+        }
+        #form {
+            background-color: #98CCCC;
+        }
+        .info {
+            font-size: 17pt;
+        }
+        .txtbox {
+            font-size: 17pt; height:30px; width:500px; display: inline-block;
+        }
+        body {text-align:center;}
+        h3 {text-align:center;}
+    </style>
+</head>
+<body>
+    <header>
+        <h1> Rêve au Chocolat </h1>
+        <nav>
+            <ul>
+                <li ><a href="index.html">Home</a> </li>
+                <li><a href="about_us.html">About Us</a> </li>
+                <li><a href="products.html">Shop</a> </li>
+                <li><a href="catering.html">Catering</a> </li>
+                <li><a style = "text-decoration: underline; text-underline-position: under; box-sizing: border-box;" href="index.html">Gifts</a> </li>
+                <li><a href="index.html">Events</a> </li>
+                <li><a href="index.html">Contact Us</a> </li>
+            </ul>
+        </nav>
+    </header>
+    <br>
+    <div id = "catering">
+        <h2>CATERING</h2>
+        <!-- Display the events and suggestions for giftboxes -->
+        <div style = "text-align:center" class = "info">
+            For any inquiries you may have, we are available anytime by 
+            filling the below form. <br \> Our Commerical Service responds to your query 
+            as soon as possible.
+        </div>
+        <br>
+    </div>
+    <div id = "form">
+        <h5> REQUEST A QUOTE </h5>
+    <form style = "text-align:center;" class = "info" onsubmit = "return validateForm()">
+         <!--Name Section-->
+         <label for = "lname" class = "tab"> *Last Name </label> <span class ="tab"></span>
+         <input type= "text" id="lname" class = "txtbox" >
+         <br /><br />
+         <label for "fname" class = "tab"> *First Name </label><span class ="tab"></span>
+         <input type = "text" id="fname" class = "txtbox" >
+         <br /><br />
+         <!--Email Section-->
+        <label for = "email" class = "tab"> *Your Email </label><span class ="tab"></span>
+        <input type="text" id="email" class = "txtbox" >
+        <br /><br />
+        <!-- Phone Section -->
+        <label for = "phone" class = "tab"> Phone &emsp;</label><span class ="tab"></span>
+        <input type ="text" id ="phone" class = "txtbox" >
+        <br /><br />
+        <!--Company Section-->
+        <label for = "company" class = "tab"> Company</label><span class ="tab"></span>
+        <input type ="text" id ="company" class = "txtbox" >
+        <br /><br />
+        <!--Address Section-->
+        <label for = "address" class = "tab"> Address</label><span class ="tab"></span>
+        <input type ="text" id ="address" class = "txtbox">
+        <br /><br />
+        <!--City Section-->
+        <label for = "city" class = "tab"> City</label><span class ="tab"></span>
+        <input type ="text" id ="city" class = "txtbox" >
+        <br /><br />
+        <!--Zipcode Section-->
+        <label for = "zipcode" class = "tab"> Zipcode</label><span class ="tab"></span>
+        <input type ="text" id ="zipcode" class = "txtbox" >
+        <br /><br />
+        <!-- Country Section -->
+        <label for = "country" class = "tab"> Country</label><span class ="tab"></span>
+        <input type ="text" id ="country" class = "txtbox" >
+        <br /><br />
+        <!-- Subject section -->
+        <label for = "subject" class = "tab"> Subject</label><span class ="tab"></span>
+        <input type ="text" id ="subject" class = "txtbox">
+        <br /><br />
+        <!--Description Section-->
+        <label for="description"> Description </label><span class ="tab"></span>
+        <textarea id="description" rows="4" cols="65"></textarea><br />
+        <br \>
+        <label style="font-size: 30px">Fields marked with * are mandatory </label> <br \>
+        <br \>
+        <input type = "submit" value = "Submit Request" style= "height:30px; width:200px">
+    </form>
+    <br>
+    <br>
+</div>
+<footer>
+    &copy; 2021 Rêve au Chocolat – 23 Fausse Street, Cambridge, MA – (617) 555 0113
+</footer>
+    <script language = "javascript">
+    function validateForm()
+    {
+        var last = document.getElementById("lname").value;
+        var first = document.getElementById("fname").value;
+        var email = document.getElementById("email").value;
+        if ((first == "") && (last == ""))
+        {
+            alert("Please fill out your first and last name");
+        }
+        else if (last == "")
+        {
+            alert("Please fill out your last name");
+        }
+        else if (first == "")
+        {
+            alert("Please fill out your first name");
+        }
+        else if (email == "")
+        {
+            alert("Please fill out your email")
+        }
+        else {
+            var x = "Thank you for submitting your request. \n";
+            var y = "We will get back to you as soon as possible with details of catering."
+            alert("Dear " + first + " " + last + ",\n" + x + y + "\nSincerely, Rêve au Chocolat");
+        }
+        
+    }
+    </script>
+</body>
+</html>
