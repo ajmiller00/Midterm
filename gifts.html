@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="keywords" content="chocolate, gourmet, fine, truffle, French, Cambridge, gifts, milk, dark, white, chocolatier, catering">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type = "text/css" href= "style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600;700&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600;700&display=swap" rel="stylesheet">
+        <title>Rêve au Chocolat</title>
+    </head>
+    <body>
+        <header>
+            <a href="index.html"><img src="logo-06.png" class="header"/></a>
+            <nav>
+                <ul>
+                    <li><a href="index.html" style = "padding-left = 1%;">Home</a> </li>
+                    <li><a href="about_us.html">About Us</a> </li>
+                    <li><a href="product.html">Shop</a> </li>
+                    <li><a href="catering.html">Catering</a> </li>
+                    <li><a style = "text-decoration: underline; text-underline-position: under; box-sizing: border-box;" href="gifts.html">Gifts</a> </li>
+                    <li><a href="workshops_events.html">Events</a> </li>
+                    <li><a href="contact.html" >Contact Us</a> </li>
+                </ul>
+            </nav>
+
+            <div class="burger" id = "bur">
+                <img src="burger.png" class="burger" onclick="show()">
+            </div>
+
+            <div class="oBurger" id = "burger">
+                <ul id = "burgerUl">
+                    <li><a href="index.html">Home</a> </li>
+                    <li><a href="about_us.html">About Us</a> </li>
+                    <li><a href="product.html">Shop</a> </li>
+                    <li><a href="catering.html">Catering</a> </li>
+                    <li><a style = "text-decoration: underline; text-underline-position: under; box-sizing: border-box;" href="gifts.html">Gifts</a> </li>
+                    <li><a href="workshops_events.html">Events</a> </li>
+                    <li><a href="contact.html" >Contact Us</a> </li>
+                </ul>
+            </div>
+
+
+        </header>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~Javascript~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+        <script type="text/javascript">
+
+            window.onload = function() {
+
+                if (document.getElementById("bur").style.display == "none") {
+                    document.getElementById("burger").style.display = "none";
+                }
+            }
+
+            function costCalc() {
+                const myArr = this.name.split("amount");
+                id = myArr[1];
+                cost = items[id].cost * this.selectedIndex;
+                costs[id] = cost;
+            }
+
+            function totCalc() {
+                mes = "";
+                total = 0;
+                for (i = 0; i < 15; i++) {
+                    if (costs[i] != 0) {
+                        num = costs[i] / items[i].cost;
+       					mes += num + " " + items[i].name + "\xa0\ \xa0\ $";
+       					mes += costs[i] + "<br>";
+                        total += costs[i];
+                    }
+                }
+
+                if (mes == "") {return;}
+
+                mes += "<br>Total Price: $" + total;
+                document.getElementById("totalMes").innerHTML = mes;
+            }
+
+            function show() {
+                if (document.getElementById("burger").style.display == "none") {
+                    document.getElementById("burger").style.display = "block";
+                } else {
+                    document.getElementById("burger").style.display = "none";
+                }
+            }
+
+            function select(name) {
+                s = "";
+            	s = "<select name='" + name + "' size='1' onchange = 'costCalc.call(this)' >";
+                for (i = 0; i < 11; i++) {
+                    s += "<option value='" + i + "'>" + i + "</option>"
+                }
+                s += "</select>";
+                document.writeln(s)
+            }
+
+            // Item handling
+
+            function giftItem (name, cost) {
+                this.name = name;
+                this.cost = cost;
+            }
+
+            items = new Array(
+                new giftItem("Handmade Assorted French Macarons", 30),
+                new giftItem("Caramel Lover’s Dream", 60),
+                new giftItem("Rêve au Chocolat's Classic Truffles", 28),
+                new giftItem("Box of Chocolate Covered Strawberries", 28),
+                new giftItem("Heart Shaped Rainbow Truffles", 28),
+                new giftItem("Rainbow Truffles", 28),
+                new giftItem("Hot Cocoa Basket", 15),
+                new giftItem("Truffle Party Pack", 60),
+                new giftItem("Chocolate Discs", 25),
+                new giftItem("Pistachio Truffle Assortment", 25),
+                new giftItem("Assorted Chocolate and Nuts Platte", 30),
+                new giftItem("Dark Chocolate Orange Ganache Cake", 60),
+                new giftItem("Almond Crusted Cocoa Cake", 60),
+                new giftItem("Our Famous Cookie Assortment", 25),
+                new giftItem("Art Choco", 40)
+            )
+
+            costs = new Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+        </script>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~Javascript~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+        <form class="giftForm" action="index.html" method="post">
+            <div class="gifts">
+                <h1>Gifts / Customization</h1>
+                <div style = "margin-top: 0px;" class="gItem">
+                    <img src="macaron.jpeg" class="gift"/>
+                    <h2>Handmade Assorted French Macarons</h2>
+                    <h2>$30</h2>
+                    <h3 class = "des">In honor of Chef Dubois’ roots, we bring you our most popular assortment of ten French macarons.</h3>
+                    <!-- ~~~~~~~~~~~~~~~~Javascript~~~~~~~~~~~~~~~~~~~ -->
+                    <script type="text/javascript">
+                        select("amount" + 0);
+                    </script>
+                    <!-- ~~~~~~~~~~~~~~~~Javascript~~~~~~~~~~~~~~~~~~~ -->
+                </div>
+
+                <div style = "margin-top: 0px;" class="gItem">
+                    <img src="caramel.jpeg" class="gift"/>
+                    <h2>Caramel Lover’s Dream</h2>
+                    <h2>$60</h2>
+                    <h3 class = "des">36 delectable caramel bites in here. Twelve different kinds, three of each.</h3>
+                    <br>  Pick One:
+                    <!-- ~~~~~~~~~~~~~~~~Javascript~~~~~~~~~~~~~~~~~~~ -->
+                    <script type="text/javascript">
+                        select("amount" + 1);
+                    </script>
+                    <!-- ~~~~~~~~~~~~~~~~Javascript~~~~~~~~~~~~~~~~~~~ -->
+                </div>
+
+                <div class="gItem" id="class">
+                    <img src="truffle4.jpeg" class="gift"/>
+                    <h2>Rêve au Chocolat's Classic Truffles</h2>
+                    <h2>$28</h2>
+                    <h3 class = "des">Our original truffle never gets old. Enjoy nine of them in this pack.</h3>
+                    <br>  Pick One:
+                    <!-- ~~~~~~~~~~~~~~~~Javascript~~~~~~~~~~~~~~~~~~~ -->
+                    <script type="text/javascript">
+                        select("amount" + 2);
+                    </script>
+                    <!-- ~~~~~~~~~~~~~~~~Javascript~~~~~~~~~~~~~~~~~~~ -->
+                </div>
+
+                <div class="gItem">
+                    <img src="chocostrawberry.jpeg" class="gift"/>
+                    <h2>Box of Chocolate Covered Strawberries</h2>
+                    <h2>$28</h2>
+                    <h3 class = "des">Each box comes with six strawberries.</h3>
+                    <br>  Pick One:
+                    <!-- ~~~~~~~~~~~~~~~~Javascript~~~~~~~~~~~~~~~~~~~ -->
+                    <script type="text/javascript">
+                        select("amount" + 3);
+                    </script>
+                    <!-- ~~~~~~~~~~~~~~~~Javascript~~~~~~~~~~~~~~~~~~~ -->
+                </div>
+
+                <div class="gItem">
+                    <img src="truffle.jpeg" class="gift"/>
+                    <h2>Heart Shaped Rainbow Truffles</h2>
+                    <h2>$28</h2>
+                    <h3 class = "des">Our beautiful rainbow truffles are not only pleasing to look at, but they melt in your mouth too. Now we are offering our heart shaped rainbow truffles in a pack of twelve! </h3>
+                    <br>  Pick One:
+                    <!-- ~~~~~~~~~~~~~~~~Javascript~~~~~~~~~~~~~~~~~~~ -->
+                    <script type="text/javascript">
+                        select("amount" + 4);
+                    </script>
+                    <!-- ~~~~~~~~~~~~~~~~Javascript~~~~~~~~~~~~~~~~~~~ -->
+                </div>
+
+                <div class="gItem">
+                    <img src="truffle2.jpeg" class="gift"/>
+                    <h2>Rainbow Truffles</h2>
+                    <h2>$28</h2>
+                    <h3 class = "des">Our most famous truffles all in one place. We couldn’t limit the best ones, so this pack contains 30 truffles!</h3>
+                    <br>  Pick One:
+                    <!-- ~~~~~~~~~~~~~~~~Javascript~~~~~~~~~~~~~~~~~~~ -->
+                    <script type="text/javascript">
+                        select("amount" + 5);
+                    </script>
+                    <!-- ~~~~~~~~~~~~~~~~Javascript~~~~~~~~~~~~~~~~~~~ -->
+                </div>
+
+                <div class="gItem">
+                    <img src="hotcocoa.jpeg" class="gift"/>
+                    <h2>Hot Cocoa Basket</h2>
+                    <h2>$15</h2>
+                    <h3 class = "des">All the ingredients you need to make delicious hot cocoa in the comfort of your own home.</h3>
+                    <br>  Pick One:
+                    <!-- ~~~~~~~~~~~~~~~~Javascript~~~~~~~~~~~~~~~~~~~ -->
+                    <script type="text/javascript">
+                        select("amount" + 6);
+                    </script>
+                    <!-- ~~~~~~~~~~~~~~~~Javascript~~~~~~~~~~~~~~~~~~~ -->
+                </div>
+
+                <div class="gItem">
+                    <img src="truffle3.jpeg" class="gift"/>
+                    <h2>Truffle Party Pack</h2>
+                    <h2>$60</h2>
+                    <h3 class = "des">Our most famous truffles all in one place. We couldn’t limit the best ones, so this pack contains 30 truffles!n</h3>
+                    <br>  Pick One:
+                    <!-- ~~~~~~~~~~~~~~~~Javascript~~~~~~~~~~~~~~~~~~~ -->
+                    <script type="text/javascript">
+                        select("amount" + 7);
+                    </script>
+                    <!-- ~~~~~~~~~~~~~~~~Javascript~~~~~~~~~~~~~~~~~~~ -->
+                </div>
+
+                <div class="gItem">
+                    <img src="chocolate_discs.jpeg" class="gift"/>
+                    <h2>Chocolate Discs</h2>
+                    <h2>$25</h2>
+                    <h3 class = "des">Enjoy these chocolate discs that melt in your mouth. Now in packs of 15!</h3>
+                    <br>  Pick One:
+                    <!-- ~~~~~~~~~~~~~~~~Javascript~~~~~~~~~~~~~~~~~~~ -->
+                    <script type="text/javascript">
+                        select("amount" + 8);
+                    </script>
+                    <!-- ~~~~~~~~~~~~~~~~Javascript~~~~~~~~~~~~~~~~~~~ -->
+                </div>
+
+                <div class="gItem">
+                    <img src="unnamed.jpeg" class="gift"/>
+                    <h2>Pistachio Truffle Assortment</h2>
+                    <h2>$25</h2>
+                    <h3 class = "des">Twelve of our most famous truffles, all containing pistachios.</h3>
+                    <br>  Pick One:
+                    <!-- ~~~~~~~~~~~~~~~~Javascript~~~~~~~~~~~~~~~~~~~ -->
+                    <script type="text/javascript">
+                        select("amount" + 9);
+                    </script>
+                    <!-- ~~~~~~~~~~~~~~~~Javascript~~~~~~~~~~~~~~~~~~~ -->
+                </div>
+
+                <div class="gItem">
+                    <img src="unnamed1.jpeg" class="gift"/>
+                    <h2>Assorted Chocolate and Nuts Platter</h2>
+                    <h2>$30</h2>
+                    <h3 class = "des">Perfect to top off a wine and cheese night.</h3>
+                    <br>  Pick One:
+                    <!-- ~~~~~~~~~~~~~~~~Javascript~~~~~~~~~~~~~~~~~~~ -->
+                    <script type="text/javascript">
+                        select("amount" + 10);
+                    </script>
+                    <!-- ~~~~~~~~~~~~~~~~Javascript~~~~~~~~~~~~~~~~~~~ -->
+                </div>
+
+                <div class="gItem">
+                    <img src="cake.jpeg" class="gift"/>
+                    <h2>Dark Chocolate Orange Ganache Cake</h2>
+                    <h2>$60</h2>
+                    <h3 class = "des">Mouthwatering chocolate cake infused with orange. Delightful and intricate flavors.</h3>
+                    <!-- ~~~~~~~~~~~~~~~~Javascript~~~~~~~~~~~~~~~~~~~ -->
+                    <script type="text/javascript">
+                        select("amount" + 11);
+                    </script>
+                    <!-- ~~~~~~~~~~~~~~~~Javascript~~~~~~~~~~~~~~~~~~~ -->
+                </div>
+
+                <div class="gItem">
+                    <img src="cake2.jpeg" class="gift"/>
+                    <h2>Almond Crusted Cocoa Cake</h2>
+                    <h2>$60</h2>
+                    <h3 class = "des">This delicious cake recipe comes from Chef Dubois’ grandmother. Having been made for over a decade now, this cake deserves a taste.</h3>
+                    <br>  Pick One:
+                    <!-- ~~~~~~~~~~~~~~~~Javascript~~~~~~~~~~~~~~~~~~~ -->
+                    <script type="text/javascript">
+                        select("amount" + 12);
+                    </script>
+                    <!-- ~~~~~~~~~~~~~~~~Javascript~~~~~~~~~~~~~~~~~~~ -->
+                </div>
+
+                <div class="gItem">
+                    <img src="cookie4.jpeg" class="gift"/>
+                    <h2>Our Famous Cookie Assortment</h2>
+                    <h2>$25</h2>
+                    <h3 class = "des">Our most famous cookies all in one place! Perfect for any occasion.</h3>
+                    <br>  Pick One:
+                    <!-- ~~~~~~~~~~~~~~~~Javascript~~~~~~~~~~~~~~~~~~~ -->
+                    <script type="text/javascript">
+                        select("amount" + 13);
+                    </script>
+                    <!-- ~~~~~~~~~~~~~~~~Javascript~~~~~~~~~~~~~~~~~~~ -->
+                </div>
+
+                <div class="gItem" id="choco">
+                    <img src="chocolates.jpeg" class="gift"/>
+                    <h2>Art Choco</h2>
+                    <h2>$40</h2>
+                    <h3 class = "des">Make sure to check out our art deco chocolate pack that is as artsy on the inside as on the outside.</h3>
+                    <br>  Pick One:
+                    <!-- ~~~~~~~~~~~~~~~~Javascript~~~~~~~~~~~~~~~~~~~ -->
+                    <script type="text/javascript">
+                        select("amount" + 14);
+                    </script>
+                    <!-- ~~~~~~~~~~~~~~~~Javascript~~~~~~~~~~~~~~~~~~~ -->
+                </div>
+            </div>
+
+            <div class="total" onclick="totCalc()">
+                <h3 id="total">Get Total</h3>
+            </div>
+                <h3 id="totalMes" ></h3>
+        </form>
+
+    </body>
+</html>
