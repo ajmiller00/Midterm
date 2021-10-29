@@ -1,0 +1,236 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link href='https://fonts.googleapis.com/css?family=Josefin Sans' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Ananda Pro' rel='stylesheet'>
+<link rel="stylesheet" href=style.css>
+<title>Workshops & Events</title>
+
+<style type="text/css">
+	.left {
+		width: 40%; 
+		display:inline-block;
+		height:400px;
+	}
+	.right {
+		width: 40%; 
+		display:inline-block;
+		position:relative;
+	}
+
+	#content {
+		background-color: #FCECC8;
+	}
+
+	#content2 {
+		text-align: center;
+		font-family: "Josefin Sans";
+		font-weight: 600pt;
+		font-size: 27pt;
+		color: #003267;
+		padding: 40px 200px 100px 200px;
+		display: block;
+		box-sizing:border-box;
+	}
+
+	.img_text {
+		font-family: "Andada Pro";
+		font-weight: 600pt;
+		font-style: italic;
+		font-size: 20px;
+		line-height: 150%;
+	  	position: absolute;
+	  	top: 0;
+	  	bottom: 0;
+	  	left: 0;
+	  	right: 0;
+	  	padding: 20px;
+	  	background: rgba(0, 50, 103, 0.72);
+	  	color: #fff;
+	  	visibility: hidden;
+	  	opacity: 0;
+	  	transition: opacity .2s, visibility .2s;
+	  	object-fit: contain;
+	}
+
+	.img_wrap:hover .img_text {
+		visibility: visible;
+  		opacity: 1;
+	}
+
+	.img_wrap {
+		position: relative;
+	}
+
+	.bottom_text {
+		font-family: "Andada Pro";
+		font-weight: 600pt;
+		font-style: italic;
+		font-size: 24px;
+		object-fit: contain;
+	}
+
+	img {
+		width:100%;
+		height:100%;
+		object-fit: contain;
+	}
+
+
+	@media only screen and (max-width: 600px) { 
+		.img_wrap:hover .img_text { 
+			display: none; 
+		} 
+
+		.left, .right {
+			width: 100%;
+		}
+	}
+
+	@media only screen and (max-width: 1100px) { 
+		.img_wrap:hover .img_text { 
+			display: none; 
+		} 
+
+		.left, .right {
+			width: 100%;
+		}
+
+		img {
+			width: 50%;
+		}
+	}
+
+</style>
+
+</head>
+
+<body>
+	<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="keywords" content="chocolate, gourmet, fine, truffle, French, Cambridge, gifts, milk, dark, white, chocolatier, catering">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type = "text/css" href= "style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600;700&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600;700&display=swap" rel="stylesheet">
+        <title>Rêve au Chocolat</title>
+    </head>
+    <body>
+        <header>
+            <a href="index.html"><img src="logo-06.png" class="header"/></a>
+            <nav>
+                <ul>
+                    <li><a href="index.html" style = "padding-left = 1%;">Home</a> </li>
+                    <li><a href="about_us.html">About Us</a> </li>
+                    <li><a href="product.html">Shop</a> </li>
+                    <li><a href="catering.html">Catering</a> </li>
+                    <li><a href="gifts.html">Gifts</a> </li>
+                    <li><a style = "text-decoration: underline; text-underline-position: under; box-sizing: border-box;" href="workshops_events.html">Events</a> </li>
+                    <li><a href="contact.html" >Contact Us</a> </li>
+                </ul>
+            </nav>
+
+            <div class="burger" id = "bur">
+                <img src="burger.png" class="burger" onclick="show()">
+            </div>
+
+            <div class="oBurger" id = "burger">
+                <ul id = "burgerUl">
+                    <li><a href="index.html">Home</a> </li>
+                    <li><a href="about_us.html">About Us</a> </li>
+                    <li><a href="product.html">Shop</a> </li>
+                    <li><a href="catering.html">Catering</a> </li>
+                    <li><a href="gifts.html">Gifts</a> </li>
+                    <li><a style = "text-decoration: underline; text-underline-position: under; box-sizing: border-box;" href="workshops_events.html">Events</a> </li>
+                    <li><a href="contact.html" >Contact Us</a> </li>
+                </ul>
+            </div>
+        </header>
+
+	<div>
+		<script langauge='javascript'>
+			function validateForm() {
+				with(document.form1) {
+					if (name.value == "") alert("No name provided");
+					else if (email.value == "") alert("No email provided");
+					else if (!(email.value.includes("@"))) alert("Must provide valid email address");
+					else if (phone.value == "") alert("No phone number provided");
+					else if (phone.value.length != 10) alert("Invalid phone number provided. Input phone number in form xxxxxxxxxx.");
+					else if (datetime.value == "") alert("No date/time provided or incomplete date/time provided");
+					else if (occasion.value == "") alert("No occasion provided");
+					else if (format.value == "") alert("No event format provided");
+					else if (format.value == "other") {
+						if (other.value == "") alert("With event format as Other, must include text in Other notes");
+						else alert("Thank you for submitting an event request. We will get back to you within 72 hours.");
+					}
+					else alert("Thank you for submitting an event request. We will get back to you within 72 hours.");
+				}
+			}
+		</script>
+	</div>
+
+	<div id='content'>
+		<h1>Events & Workshops</h1>
+		<br> <br>
+		<div id='content2'>
+			<div class='left'>
+				<div class="img_wrap">
+					<a href='bark_making.html' style="text-decoration: inherit">
+						<img src='bark.jpg' width=90% height=350px max-width=250px/>
+					</a>
+					<p class="img_text">Join us for a hands-on chocolate bark making workshop. We will teach you all you need to know about chocolate and tempering. And best of all, you get to take home your delicious creation to share with friends and family.
+				</div>
+				<br>
+				<h2><a href='bark_making.html' style="text-decoration: inherit; font-size: 24pt;">Bark Making Workshop</a></h2>
+				<p class='bottom_text'>Friday, November 12 @ 4pm</p>
+				<p class='bottom_text'>Friday, December 10 @ 4pm</p>
+			</div>
+			<div class='right'>
+				<div class="img_wrap">
+					<a href='truffle_making.html' style="text-decoration: inherit">
+						<img src='truffles.jpg' width=90% height=350px max-width=250px/>
+					</a>
+					<p class="img_text">Spend an hour and a half at Rêve au Chocolat perfecting the art of truffle making. You will create your own truffles, learning about infusing flavors. We will provide you with a complementary Rêve au Chocolat apron to keep yourself clean during this fun event and beyond.</p>
+				</div>
+				<br>
+				<h2><a href='truffle_making.html' style="text-decoration: inherit; font-size: 24pt;">Technique: Truffle Making</a></h2>
+				<p class='bottom_text'>Saturday, November 13 @ 4pm</p>
+				<p class='bottom_text'>Saturday, December 11 @ 4pm</p>
+			</div>
+			<br> <br>
+			<div>
+				<h2 style="font-size: 24pt;">Private Bookings & Parties</h2>
+				<p class='bottom_text'>We would love to schedule your next party or corporate event. Please use this form to submit your request. We will get back to you within three business days.</p>
+				<form name='form1' class='bottom_text' method="get" onsubmit='return validateForm();'>
+					Name*: <input type="text" name='name' required='1'><br>
+					Email*: <input type="text" name="email" required="1"><br>
+					Phone number*: <input type="text" name="phone" required="1"><br>
+					Requested date*: <input type="datetime-local" name="datetime" required="1"><br>
+					Occasion*: <input type="text" name="occasion" required="1"><br>
+					Event format*: <select name="format" required="1"> 
+						<option></option>
+						<option value="Truffles">Truffle Making</option>
+						<option value="Bark">Bark Making</option>
+						<option value="Fudge">Fudge Making</option>
+						<option value="Presentation">Chocolate 101 Interactive Presentation</option>
+						<option value="other">Other (explain below)</option>
+					</select> <br>
+					Other notes: <input type="text" name="other"> <br>
+					<input type="submit" value="Submit"/>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<footer>
+		&copy; 2021 Rêve au Chocolat – 23 Fausse Street, Cambridge, MA – (617) 555 0113
+	</footer>
+</body>
+</html>
