@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600;700&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600;700&display=swap" rel="stylesheet">
+    <meta charset="utf-8">
+        <meta name="keywords" content="chocolate, gourmet, fine, truffle, French, Cambridge, gifts, milk, dark, white, chocolatier, catering">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type = "text/css" href= "style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600;700&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600;700&display=swap" rel="stylesheet">
 
     <title>Catering Information</title>
     <link rel = "stylesheet" type = "text/css" href = "style.css">
@@ -16,9 +18,7 @@
         #catering {
             background-color: #FCECC8;
         }
-        body {
-            font-family: "Andada Pro";
-        }
+        
         .tab {
             display: inline-block;
             margin-right: 40px;
@@ -33,13 +33,14 @@
         .txtbox {
             font-size: 17pt; height:30px; width:500px; display: inline-block;
         }
+        
         h3 {text-align:center;}
         h2 {font-size: 30px;}
     </style>
 </head>
 <body>
     <header>
-        <a href="index.html"> <img src="logo-06.png" class="header"/></a>
+        <a href="index.html"><img src="logo-06.png" class="header"/></a>
         <nav>
             <ul>
                 <li><a href="index.html" style = "padding-left : 1%;">Home</a> </li>
@@ -51,7 +52,8 @@
                 <li><a href="contact.html" >Contact Us</a> </li>
             </ul>
         </nav>
-       <div class="burger" id = "bur">
+
+        <div class="burger" id = "bur">
             <img src="burger.png" class="burger" onclick="show()">
         </div>
 
@@ -65,9 +67,11 @@
                 <li><a href="workshops_events.html">Events</a> </li>
                 <li><a href="contact.html" >Contact Us</a> </li>
             </ul>
-       </div>
+        </div>
+
 
     </header>
+
     <div id = "catering">
         <h1>Catering</h1>
         <!-- Display the events and suggestions for giftboxes -->
@@ -83,46 +87,46 @@
         <h2> REQUEST A QUOTE </h2>
     <form style = "text-align:center;" class = "info" onsubmit = "return validateForm()">
          <!--Name Section-->
-         <label for = "lname" class = "tab"> Last Name*: </label> <span class ="tab"></span>
+         <label for = "lname" class = "tab"> *Last Name </label> <span class ="tab"></span>
          <input type= "text" id="lname" class = "txtbox" >
          <br /><br />
-         <label for "fname" class = "tab"> First Name*: </label><span class ="tab"></span>
+         <label for "fname" class = "tab"> *First Name </label><span class ="tab"></span>
          <input type = "text" id="fname" class = "txtbox" >
          <br /><br />
          <!--Email Section-->
-        <label for = "email" class = "tab"> Your Email*: </label><span class ="tab"></span>
+        <label for = "email" class = "tab"> *Your Email </label><span class ="tab"></span>
         <input type="text" id="email" class = "txtbox" >
         <br /><br />
         <!-- Phone Section -->
-        <label for = "phone" class = "tab"> Phone: &emsp;&emsp;&nbsp;&nbsp;</label><span class ="tab"></span>
+        <label for = "phone" class = "tab"> Phone &emsp;&emsp;&nbsp;&nbsp;</label><span class ="tab"></span>
         <input type ="text" id ="phone" class = "txtbox" >
         <br /><br />
         <!--Company Section-->
-        <label for = "company" class = "tab"> Company: &emsp;</label><span class ="tab"></span>
+        <label for = "company" class = "tab"> Company &emsp;</label><span class ="tab"></span>
         <input type ="text" id ="company" class = "txtbox" >
         <br /><br />
         <!--Address Section-->
-        <label for = "address" class = "tab"> Address:&emsp;&emsp;</label><span class ="tab"></span>
+        <label for = "address" class = "tab"> Address&emsp;&emsp;</label><span class ="tab"></span>
         <input type ="text" id ="address" class = "txtbox">
         <br /><br />
         <!--City Section-->
-        <label for = "city" class = "tab"> City:&emsp;&emsp;&emsp;&nbsp;&nbsp;</label><span class ="tab"></span>
+        <label for = "city" class = "tab"> City&emsp;&emsp;&emsp;&nbsp;&nbsp;</label><span class ="tab"></span>
         <input type ="text" id ="city" class = "txtbox" >
         <br /><br />
         <!--Zipcode Section-->
-        <label for = "zipcode" class = "tab"> Zipcode: &emsp;&nbsp;&nbsp;&nbsp;</label><span class ="tab"></span>
+        <label for = "zipcode" class = "tab"> Zipcode &emsp;&nbsp;&nbsp;&nbsp;</label><span class ="tab"></span>
         <input type ="text" id ="zipcode" class = "txtbox" >
         <br /><br />
         <!-- Country Section -->
-        <label for = "country" class = "tab"> Country: &emsp;&nbsp;&nbsp;</label><span class ="tab"></span>
+        <label for = "country" class = "tab"> Country &emsp;&nbsp;&nbsp;</label><span class ="tab"></span>
         <input type ="text" id ="country" class = "txtbox" >
         <br /><br />
         <!-- Subject section -->
-        <label for = "subject" class = "tab"> Subject: &emsp;&emsp;</label><span class ="tab"></span>
+        <label for = "subject" class = "tab"> Subject &emsp;&emsp;</label><span class ="tab"></span>
         <input type ="text" id ="subject" class = "txtbox">
         <br /><br />
         <!--Description Section-->
-        <label for="description" style="font-size:20pt;"> Description: &emsp;&emsp;&nbsp;</label><span class ="tab"></span>
+        <label for="description" style="font-size:20pt;"> Description &emsp;&emsp;&nbsp;</label><span class ="tab"></span>
         <textarea id="description" rows="4" cols="65"></textarea><br />
         <br \>
         <label style="font-size: 30px">Fields marked with * are mandatory </label> <br \>
