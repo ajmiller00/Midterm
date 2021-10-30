@@ -1,8 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Andada+Pro:ital,wght@1,500&family=Josefin+Sans:ital,wght@0,700;1,600&display=swap');
 
-body {
-  margin:0;
-}
+
 .new_arrivals_flex{
   padding: 0 15% 0 15%;
   display: flex;
