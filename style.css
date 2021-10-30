@@ -64,7 +64,6 @@ header {
 
 div.gifts {
     background-color: #98cccc;
-    height: 3100px;
 }
 
 div.gItem {
@@ -188,19 +187,12 @@ div.total {
         padding-left: 1.5%;
         padding-right: 4%;
     }
-
-    div.gifts {
-        height: 3000px;
-    }
 }
 
 @media (max-width: 1028px) {
     nav ul li {
         padding-left: 1%;
         padding-right: 2.8%;
-    }
-    div.gifts {
-        height: 2900px;
     }
 }
 
@@ -237,20 +229,3 @@ div.total {
     }
 }
 
-@media (max-width: 800px) {
-    div.gifts {
-        height: 4650px;
-    }
-}
-
-@media (max-width: 700px) {
-    div.gifts {
-        height: 4500px;
-    }
-}
-
-@media (max-width: 600px) {
-    div.gifts {
-        height: 4350px;
-    }
-}
