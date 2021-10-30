@@ -334,9 +334,12 @@
                 for (i = 0; i< menuItems.length; i++)
                 {
                     var quan = document.getElementById("quan" + i).value;
-                    var cost = (menuItems[i].cost * quan).toFixed(2);
-                    msg += menuItems[i].name + " " + cost + "\n>";
-                    totalCost += parseFloat(cost);
+                    if (quan != 0)
+                    {
+                        var cost = (menuItems[i].cost * quan).toFixed(2);
+                        msg += menuItems[i].name + " " + cost + "\n>";
+                        totalCost += parseFloat(cost);
+                    }
                 }
                 msg += "Total Price: " + totalCost;
                 document.getElementById("message").innerHTML = msg;
