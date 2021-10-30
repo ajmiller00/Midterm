@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <link href='https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600;700&display=swap' rel='stylesheet'>
-<link href='https://fonts.googleapis.com/css?family=Andada Pro' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Anadada Pro' rel='stylesheet'>
 <link rel="stylesheet" href=style.css>
 <title>Workshops & Events</title>
 
@@ -82,9 +82,10 @@
 			display: none; 
 		} 
 
-		.left, .right {
+		.left, .right, #content2 {
 			width: 100%;
 			padding: 0px;
+			padding: 20px;
 		}
 	}
 
@@ -101,6 +102,33 @@
 		img {
 			width: 50%;
 		}
+	}
+
+	input.submit {
+		font-family: 'Josefin Sans', sans-serif;
+		font-weight: 700;
+		font-size: 25px;
+		padding:10px 20px;
+		background-color: #ff9933;
+		color: #003267;
+		border: none;
+		margin-top:  10px;
+		cursor:pointer;
+		-webkit-border-radius: 5px;
+		border-radius: 4px;
+	}
+
+	button {
+		font-family: 'Josefin Sans', sans-serif;
+		font-weight: 700;
+		font-size: 25px;
+		padding: 10px 20px;
+		background-color: #ff9933;
+		color: #003267;
+		border: none;
+		cursor:pointer;
+		-webkit-border-radius: 5px;
+		border-radius: 4px;
 	}
 
 </style>
@@ -234,7 +262,7 @@
 						<option value="other">Other (explain below)</option>
 					</select> <br>
 					Other notes: <input type="text" name="other"> <br>
-					<input type="submit" value="Submit"/>
+					<input type="submit" value="Submit" class="submit"/>
 				</form>
 			</div>
 		</div>
