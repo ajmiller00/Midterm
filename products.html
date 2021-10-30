@@ -1,28 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600;700&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600;700&display=swap" rel="stylesheet">
 
-    <title>General Product Catalog</title>
-    <link rel = "stylesheet" type = "text/css" href = "style.css">
-    <style type = "text/css">
-        body {
-            font-family: "Andada Pro";
-        }
-        * {
-            box-sizing: border-box;
-        }
-        /* need to make this .img */
-        .img {
-            max-width: 290px;
             max-height: 330px;
             background-size: cover;
         }
@@ -36,6 +12,7 @@
             font-weight: 600pt;
             font-size: 24pt;
             text-align:center;
+            box-sizing: border-box;
         }
         h2 {
             text-align: left;
@@ -69,9 +46,9 @@
         <a href="index.html"><img src="logo-06.png" class="header"/></a>
         <nav>
             <ul>
-                <li><a href="index.html" style = "padding-left:1%;">Home</a> </li>
+                <li><a href="index.html" style = "padding-left = 1%;">Home</a> </li>
                 <li><a href="about_us.html">About Us</a> </li>
-                <li><a style = "text-decoration: underline; text-underline-position: under; box-sizing: border-box;" href="products.html">Shop</a> </li>
+                <li><a style = "text-decoration: underline; text-underline-position: under; box-sizing: border-box;"href="products.html">Shop</a> </li>
                 <li><a href="catering.html">Catering</a> </li>
                 <li><a href="gifts.html">Gifts</a> </li>
                 <li><a href="workshops_events.html">Events</a> </li>
@@ -87,16 +64,16 @@
             <ul id = "burgerUl">
                 <li><a href="index.html">Home</a> </li>
                 <li><a href="about_us.html">About Us</a> </li>
-                <li><a style = "text-decoration: underline; text-underline-position: under; box-sizing: border-box;"href="products.html">Shop</a> </li>
+                <li><a style = "text-decoration: underline; text-underline-position: under; box-sizing: border-box;" href="products.html">Shop</a> </li>
                 <li><a href="catering.html">Catering</a> </li>
                 <li><a href="gifts.html">Gifts</a> </li>
                 <li><a href="workshops_events.html">Events</a> </li>
                 <li><a href="contact.html" >Contact Us</a> </li>
             </ul>
         </div>
+
+
     </header>
-    <br>
-    <br>
     <div id = "products">
         <h1>General Catalog</h1>
         <div>
@@ -269,14 +246,12 @@
             </div>          
         </div>
         <br \> <br>
-        <div class = "total">
-              <input type = "submit" id = "submit" value = "Add to Cart">           
-        </div>
-        <br>
-        <div>
-            <h3 id = "message"> </h3>
-        </div>
+        <h3>&nbsp;</h3>
     </div>
+    <div class = "total" id ="submit">
+        <h3 id = "total">Add to Cart</h3>
+    </div>
+    <h3 id = "totalMes"></h3>
     <footer>
         &copy; 2021 Rêve au Chocolat – 23 Fausse Street, Cambridge, MA – (617) 555 0113
     </footer>
@@ -346,13 +321,13 @@
                     var quan = document.getElementById("quan" + i).value;
                     if (quan != 0)
                     {
-                        var cost = (menuItems[i].cost * quan).toFixed(2);
-                        msg += menuItems[i].name + " " + cost + "\n>";
+                        var cost = (menuItems[i].cost * quan);
+                        msg += quan + " " + menuItems[i].name + " $" + cost + "<br>";
                         totalCost += parseFloat(cost);
                     }
                 }
-                msg += "Total Price: " + totalCost;
-                document.getElementById("message").innerHTML = msg;
+                msg += "Total Price: $" + totalCost;
+                document.getElementById("totalMes").innerHTML = msg;
             });
         });
 
