@@ -111,7 +111,8 @@ img.header {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 40%;
+    width: 20%;
+    min-width: 250;
 }
 
 div.content {
