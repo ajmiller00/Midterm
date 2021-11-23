@@ -112,7 +112,7 @@ img.header {
     margin-left: auto;
     margin-right: auto;
     width: 20%;
-    min-width: 250;
+    min-width: 250px;
 }
 
 div.content {
