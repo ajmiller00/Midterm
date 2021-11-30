@@ -10,12 +10,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amaranth&display=swap" rel="stylesheet">
+
 
     <title>General Product Catalog</title>
     <link rel = "stylesheet" type = "text/css" href = "style.css">
     <style type = "text/css">
         body {
-            font-family: "Andada Pro";
+            font-family: 'Amaranth', sans-serif;
         }
         /* need to make this .img */
         .img {
@@ -51,7 +53,7 @@
         #products {
             background-color: #FCECC8;
         }
-        
+
         #message {
             text-align:center;
         }
@@ -85,7 +87,6 @@
         <a href="index.html"><img src="logo-06.png" class="header"/></a>
         <nav>
             <ul>
-                <li><a href="index.html" style = "padding-left= 1%;">Home</a> </li>
                 <li><a href="about_us.html">About Us</a> </li>
                 <li><a style = "text-decoration: underline; text-underline-position: under; box-sizing: border-box;"href="products.html">Shop</a> </li>
                 <li><a href="catering.html">Catering</a> </li>
@@ -101,7 +102,6 @@
 
         <div class="oBurger" id = "burger">
             <ul id = "burgerUl">
-                <li><a href="index.html">Home</a> </li>
                 <li><a href="about_us.html">About Us</a> </li>
                 <li><a style = "text-decoration: underline; text-underline-position: under; box-sizing: border-box;" href="products.html">Shop</a> </li>
                 <li><a href="catering.html">Catering</a> </li>
@@ -115,7 +115,14 @@
     </header>
     <div id = "products">
         <h1>General Catalog</h1>
-        <div>
+        <div class="choose" style="text-align:center;">
+            <h3 style="display:inline"> <a id="choo" href=#chocobars>Chocolate Bars</a> &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp;</h3>
+            <h3 style="display:inline"> <a id="choo" href=#cc+mf>Chocolate Classics + Mixed Fruits</a> &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp;</h3>
+            <h3 style="display:inline"> <a id="choo" href=#st>Signature Truffles</a> &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp;</h3>
+            <h3 style="display:inline"> <a id="choo" href=#chocoBakery>Chocolate Bakery</a> &nbsp; &nbsp; &nbsp;</h3>
+        </div>
+        <br><br>
+        <div id = "chocobars">
             <h2> &nbsp; &nbsp;Chocolate Bars</h2>
             <div class = "column">
                 <img class = "img" src="https://www.linkpicture.com/q/extra-dark-chocolate-bar.png">
@@ -129,7 +136,7 @@
                 <p>Perfect for those who like their chocolate with a kick</p>
                 <p name = "price">$</p>
             </div>
-            
+
             <div class = "column">
                 <img class = "img" src="https://www.linkpicture.com/q/hazelnut-bar.png">
                 <h4 name = "product">Hazelnut Swirl Chocolate Bar</h4>
@@ -145,7 +152,7 @@
         </div>
         <h3>&nbsp;</h3>
         <br>
-        <div> 
+        <div id="cc+mf">
             <h2> &nbsp; &nbsp; Chocolate Classics + Mixed Fruits </h2>
             <div class = "column">
                 <img class = "img" src="https://www.linkpicture.com/q/actual_caramel.jpeg">
@@ -174,7 +181,7 @@
             <div class = "column">
                 <img class = "img" src="https://www.linkpicture.com/q/random-choc.png">
                 <h4 name = "product">Random Mixed Chocolate</h4>
-                <p>Boxes feature between 10-20 flavors, dark outside, different inside, 
+                <p>Boxes feature between 10-20 flavors, dark outside, different inside,
                 depending on season and all are delicious! </p>
                 <p name = "price">$</p>
             </div>
@@ -182,14 +189,14 @@
                 <img class = "img" src = "https://bit.ly/3G27CLu">
                 <br \>
                 <h4 name = "product">Chocolate Dipped Fruits</h4>
-                <p> Healthy delicious chocolate covered fruits 
+                <p> Healthy delicious chocolate covered fruits
                 blanketed in premium gourmet chocolate, the ultimate combo.</p>
                 <p name = "price">$</p>
             </div>
             <div class = "column">
                 <img class = "img" src="https://www.linkpicture.com/q/blue_choc.png">
-                <h4 name = "product">Blueberry Gourmet Chocolate</h4> 
-                <p>Rêve au Chocolat's Whole California blueberry hand-dipped in our 
+                <h4 name = "product">Blueberry Gourmet Chocolate</h4>
+                <p>Rêve au Chocolat's Whole California blueberry hand-dipped in our
                 own gourmet dark chocolate, complimented in our beautiful gift box.</p>
                 <p name = "price">$</p>
 
@@ -197,13 +204,13 @@
             <div class = "column">
                 <img class = "img" src = "https://bit.ly/3B4m6XC">
                 <h4 name = "product">Chocolate Covered Apricots</h4>
-                <p>Rêve au Chocolat's Whole California apricots hand-dipped in our own 
+                <p>Rêve au Chocolat's Whole California apricots hand-dipped in our own
                 gourmet dark chocolate, complimented in our beautiful gift box.</p>
                 <p name = "price">$</p>
             </div>
         </div>
         <h3>&nbsp;</h3>
-        <div>
+        <div id="st">
             <h2> &nbsp; &nbsp; Signature Truffles </h2>
             <div class = "column">
                 <img class = "img" src="https://www.linkpicture.com/q/Rêve-au-Chocolat_1.png">
@@ -214,14 +221,14 @@
             <div class = "column">
                 <img class = "img" src="https://www.linkpicture.com/q/three_layer_1.png">
                 <h4 name = "product">Three Layer</h4>
-                <p>Our three-layer milk chocolate truffle has a layer of milk 
+                <p>Our three-layer milk chocolate truffle has a layer of milk
                 chocolate, a layer of walnut ganache finished with a layer of dark chocolate. </p>
                 <p name = "price">$</p>
             </div>
             <div class = "column">
                 <img class = "img" src="https://www.linkpicture.com/q/strawberry_2.png">
                 <h4 name = "product">Strawberry</h4>
-                <p>The strawberry explosion from the middle coupled with the 
+                <p>The strawberry explosion from the middle coupled with the
                 double chocolate coating is a delight you shouldn’t miss out on!</p>
                 <p name = "price">$</p>
             </div>
@@ -234,7 +241,7 @@
             <div class = "column">
                 <img class = "img" src="https://www.linkpicture.com/q/cinnamon-truffle.png">
                 <h4 name = "product">Cinnamon Truffle</h4>
-                <p>Our cinnamon truffle is a must have during the holiday 
+                <p>Our cinnamon truffle is a must have during the holiday
                 season. This cinnamony delicacy is a must have.</p>
                 <p name = "price">$</p>
             </div>
@@ -256,11 +263,11 @@
                 <p>Dark chocolate ganache infused with coconut covered in coconut flakes.</p>
                 <p name = "price">$</p>
             </div>
-            
+
         </div>
         <h3>&nbsp;</h3>
         <div id = "products">
-            <h2> &nbsp; &nbsp; Chocolate bakery</h2>
+            <h2 id = "chocoBakery"> &nbsp; &nbsp; Chocolate bakery</h2>
             <div class = "column">
                 <img class = "img" src="https://www.linkpicture.com/q/cupcakes.png">
                 <h4 name = "product">72% Dark Chocolate Cupcakes</h4>
@@ -275,7 +282,7 @@
             </div>
             <div class = "column">
                 <img class = "img" src="https://www.linkpicture.com/q/tiramisu.jpeg">
-                <h4 name = "product">Chocolate Tiramisu Cake</h4> 
+                <h4 name = "product">Chocolate Tiramisu Cake</h4>
                 <p>Think of everything you love about chocolate cheesecake and melt-in-your-mouth tiramisu.</p>
                 <p name = "price">$</p>
             </div>
@@ -284,7 +291,7 @@
                 <h4 name = "product">Nutcracker</h4>
                 <p>Hazelnut cake, caramel creme brulee, crunchy hazelnut gianduja, milk chocolate mousse, chocolate decor </p>
                 <p name = "price">$</p>
-            </div>          
+            </div>
         </div>
         <br \> <br>
         <h3>&nbsp;</h3>
@@ -298,7 +305,7 @@
     </footer>
 
     <script language = "javascript">
-        
+
         function product(name, cost)
         {
             this.name = name;
@@ -332,7 +339,7 @@
             new product("Nutcracker", 10),
         );
 
-        window.onload = function() 
+        window.onload = function()
         {
             for (i = 0; i < menuItems.length; i++)
             {
@@ -348,7 +355,7 @@
             t = "<select id='" + name + "' size='1'>";
             for (j=minRange; j<=maxRange; j++)
             t += "<option value=" + j+ ">" + j + "</option>";
-            t+= "</select>"; 
+            t+= "</select>";
             return t;
         }
 
