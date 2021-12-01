@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel = "stylesheet" type = "text/css" href = "style_haijun.css">
+    <style type = "text/css">
+        body {
+            text-align:center;
+            font-size:30px;
+        }
+        .input_row {
+            text-align:left;
+            position:relative;
+            left:33%;
+        }
+        form {
+            margin-right:auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- header here -->
+    <h1>Login</h1>
+    <form onclick = "dosomething">
+        <div class = "input_row">
+            <label>Email </label>
+            <br>
+            <input type = "text" class = "text">
+        </div>
+        <div class = "input_row">
+            <label>Password</label>
+            <br>
+            <input type = "text" class = "text">
+        </div>
+        
+        <input type = "submit" value = "Sign In" class = "button">
+        <!-- Once they submit access a node js file to add to database -->
+        <br/>
+        <a class = "link" href = "register.html">New Customer? Sign up for an account</a>
+    </form>
+</body>
+</html>

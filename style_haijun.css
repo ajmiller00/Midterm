@@ -1,0 +1,30 @@
+/*  */
+.button {
+    background-color:black;
+    border:cornsilk;
+    color:white;
+    padding: 15px 32px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.link {
+    color: black;
+    box-sizing:border-box;
+    text-decoration: none;
+    border-bottom: 2px solid #0c0c0c3d;
+}
+
+.text {
+    font-family: inherit;
+    font-size: 1em;
+    line-height: 1.2em;
+    color: #262626;
+    border: 1px solid #d1d1d1;
+    background: #fff;
+    padding: 9px 0.8em;
+    max-width: 100%;
+    width: 432px;
+    min-height: 32px;
+    border-radius: 3px;
+}
