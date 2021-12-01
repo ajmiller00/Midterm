@@ -56,7 +56,7 @@
                 result = request.responseText;
                 weather = JSON.parse(result);
                 
-                document.getElementById("data").innerHTML ="<div align='center'><h2>Current Weather in Paris</h2><br><h2>Temperature: " + weather["current"]["temp"] + "&#8457;</h2>" + "<h2>Feels like: " + weather["current"]["feels_like"] + "&#8457;</h2></div>";
+                document.getElementById("data").innerHTML ="<div align='center'><br><h2>Visit the homeland of this chocolate! Prepare for your trip:<br>Current Weather in Paris</h2><br><h2>Temperature: " + weather["current"]["temp"] + "&#8457;</h2>" + "<h2>Feels like: " + weather["current"]["feels_like"] + "&#8457;</h2></div>";
                 
               }
               else if (request.readyState == 4 && request.status != 200) {
