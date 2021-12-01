@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+
+   <head>
+      <title>Home</title>
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <meta charset="utf-8">
+      <link rel="stylesheet" type = "text/css" href= "style.css">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600;700&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Amaranth&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="stylehome.css">
+
+      <style type="text/css">
+         .new_arrivals_flex {
+           background-image: url("newarrivals.jpg");
+           background-size: cover;
+           background-repeat: none;
+         }
+         .hideme{
+           opacity:0;
+         }
+         #body{
+           box-sizing:border-box;
+		       display: block;
+           padding-top: 30px;
+         }
+
+
+      </style>
+
+      <script>
+          function getWeather() {
+            /* Step 1: Make instance of request object...
+            ...to make HTTP request after page is loaded*/
+            request = new XMLHttpRequest();
+            console.log("1 - request object created");
+       
+            // Step 2: Set the URL for the AJAX request to be the JSON file
+       
+          request.open("GET", "https://api.openweathermap.org/data/2.5/onecall?lat=48.8566&lon=2.3522&exclude=hourly,daily&units=imperial&appid=c519799f9d624699a042ea95fb55cd72", true)
+
+            console.log("2 - opened request file");
+       
+            // Step 3: set up event handler/callback
+
+            request.onreadystatechange = function() {
+              console.log("3 - readystatechange event fired.");
+       
+              if (request.readyState == 4 && request.status == 200) {
+
+                // Step 5: wait for done + success
+                console.log("5 - response received");
+                result = request.responseText;
+                weather = JSON.parse(result);
+                
+                document.getElementById("data").innerHTML ="<div align='center'><h1>Current Weather in Paris</h1><br><h2>Temperature: " + weather["current"]["temp"] + "&#8457;</h2>" + "<br><h2>Feels like: " + weather["current"]["feels_like"] + "&#8457;</h2></div>";
+                
+              }
+              else if (request.readyState == 4 && request.status != 200) {
+
+                document.getElementById("data").innerHTML = "Something is wrong!  Check the logs to see where this went off the rails";
+
+              }
+
+              else if (request.readyState == 3) {
+
+                document.getElementById("data").innerHTML = "Too soon!  Try again";
+
+              }
+
+            }
+          // Step 4: fire off the HTTP request
+            request.send();
+            console.log("4 - Request sent");
+          }
+        </script>
+
+   </head>
+
+   <body onload="getWeather()">
+     <script language="javascript">
+
+     $(document).ready(function() {
+       $(window).scroll( function(){
+         $('.hideme').each( function(i){
+           var bottom_of_object = $(this).offset().top + $(this).outerHeight();
+           var bottom_of_window = $(window).scrollTop() + $(window).height();
+           if( bottom_of_window > bottom_of_object ){
+             $(this).animate({'opacity':'1'},500);
+           }
+         });
+       });
+     });
+
+         function show() {
+             if (document.getElementById("burger").style.display == "none") {
+                 document.getElementById("burger").style.display = "block";
+             } else {
+                 document.getElementById("burger").style.display = "none";
+             }
+         }
+
+
+     </script>
+
+     <header>
+            <a href="index.html"><img src="logo-06.png" class="header"/></a>
+            <nav>
+                <ul>
+                    <li><a href="about_us.html">About Us</a> </li>
+                    <li><a href="products.html">Shop</a> </li>
+                    <li><a href="catering.html">Catering</a> </li>
+                    <li><a href="gifts.html">Gifts</a> </li>
+                    <li><a href="workshops_events.html">Events</a> </li>
+                    <li><a href="contact.html" >Contact Us</a> </li>
+                </ul>
+            </nav>
+
+            <div class="burger" id = "bur">
+                <img src="burger.png" class="burger" onclick="show()">
+            </div>
+
+            <div class="oBurger" id = "burger">
+                <ul id = "burgerUl">
+                    <li><a href="about_us.html">About Us</a> </li>
+                    <li><a href="products.html">Shop</a> </li>
+                    <li><a href="catering.html">Catering</a> </li>
+                    <li><a href="gifts.html">Gifts</a> </li>
+                    <li><a href="workshops_events.html">Events</a> </li>
+                    <li><a href="contact.html" >Contact Us</a> </li>
+                </ul>
+            </div>
+
+
+    </header>
+
+
+
+
+       <div id="body">
+         <div class="new_arrivals_flex">
+           <div class="new_arrivals_text" style="flex-grow: 1" >
+             <h1 style="color:#ff9933">New Arrivals!</h1>
+             <p class="below_h1">Fresh from the oven for Thanksgiving season!</p>
+             <a href="products.html" style="text-decoration:none;"> <button class="bigbutton" type="button">
+                Shop Now
+             </button></a>
+           </div>
+         </div>
+
+         <div class="bestsellers">
+           <div><h1>Best Sellers</h1></div>
+           <div><h2>Taste our customers' favorites!</h2></div>
+           <div class="bestsellers_flex">
+             <div>
+               <img class="hideme" src="bestseller1.jpg" alt="bestseller1" width="300px" >
+             </div>
+             <div>
+               <img class="hideme" src="bestseller2.jpg" alt="bestseller2" width="300px" >
+             </div>
+             <div>
+               <img class="hideme" src="bestseller3.jpg" alt="bestseller3" width="300px" >
+             </div>
+             <div>
+               <img class="hideme" src="bestseller4.jpg" alt="bestseller4" width="300px" >
+             </div>
+           </div>
+
+           <div id="data">Loading...</div>
+
+         </div>
+
+
+
+
+
+
+       <div id="footer">
+         <footer>
+           &copy; 2021 Rêve au Chocolat – 23 Fausse Street, Cambridge, MA – (617) 555 0113
+         </footer>
+       </div>
+
+     </div>
+
+   </body>
+
+</html>
