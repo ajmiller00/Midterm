@@ -1,15 +1,19 @@
 var http = require('http');
 var fs = require('fs');
 var qs = require('querystring');
+const express = require('express');
+const app = express();
 const MongoClient = require('mongodb').MongoClient;
 const url = "mongodb+srv://amille26:cs20final@cluster0.ktqrs.mongodb.net/reveauchocolat?retryWrites=true&w=majority";
 
-http.createServer(function (req, res) {
-	file1 = 'gifts.html';
-    fs.readFile(file1, function(err, txt) {
-    	res.writeHead(200, {'Content-Type': 'text/html'});
-        //res.write(txt);
-    });
+var port = 8080;
+// http.createServer(function (req, res) {
+app.get('/', (req, res) => {
+	// file1 = 'gifts.html';
+ //    fs.readFile(file1, function(err, txt) {
+ //    	res.writeHead(200, {'Content-Type': 'text/html'});
+ //        //res.write(txt);
+ //    });
     MongoClient.connect(url, { useUnifiedTopology: true }, function(err, db) {
         if(err) { console.log("Connection err: " + err); return; }
         
@@ -34,7 +38,7 @@ http.createServer(function (req, res) {
     			res.write("<link rel='preconnect' href='https://fonts.googleapis.com'><link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>");
     			res.write("<link href='https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600;700&display=swap' rel='stylesheet'><link href='https://fonts.googleapis.com/css2?family=Amaranth&display=swap' rel='stylesheet'>");
 
-				res.write("<title>General Product Catalog</title><link rel = 'stylesheet' type = 'text/css' href = 'style.css'>");
+				res.write("<title>General Product Catalog</title><link rel = 'stylesheet' type = 'text/css' href = 'https://ajmiller00.github.io/Midterm/style.css'>");
     			res.write("<style type = 'text/css'> body { font-family: 'Amaranth', sans-serif; } .img { max-width: 290px; max-height: 330px; background-size: cover; }");
         		res.write(".column { float: left; width: 25%; padding: 10px; height: 600px; border-right: 2px solid #003267; border-left: 2px solid #003267; font-weight: 600pt; font-size: 24pt; text-align:center; box-sizing: border-box;}");
         		res.write("h2 { text-align: left; font-size: 25pt; font-weight: 900; } h4 { font-size:  25px; color: #003267; } p { font-size: 15px; font-weight:300; }");
@@ -230,5 +234,7 @@ http.createServer(function (req, res) {
 
 	});
 
-}).listen(8080);
+});//.listen(8080);
+
+app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 
