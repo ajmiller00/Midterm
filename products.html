@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amaranth&display=swap" rel="stylesheet">
+
+
+    <title>General Product Catalog</title>
+    <link rel = "stylesheet" type = "text/css" href = "style.css">
+    <style type = "text/css">
+        body {
+            font-family: 'Amaranth', sans-serif;
+        }
+        /* need to make this .img */
+        .img {
+            max-width: 290px;
+            max-height: 330px;
+            background-size: cover;
+        }
+        .column {
+            float: left;
+            width: 25%;
+            padding: 10px;
+            height: 600px;
+            border-right: 2px solid #003267;
+            border-left: 2px solid #003267;
+            font-weight: 600pt;
+            font-size: 24pt;
+            text-align:center;
+            box-sizing: border-box;
+        }
+        h2 {
+            text-align: left;
+            font-size: 25pt;
+            font-weight: 900;
+        }
+        h4 {
+            font-size:  25px;
+            color: #003267;
+        }
+        p {
+            font-size: 15px;
+            font-weight:300;
+        }
+        #products {
+            background-color: #FCECC8;
+        }
+
+        #message {
+            text-align:center;
+        }
+        #submit {
+            text-align:center;
+        }
+        @media (max-width: 991px) {
+            .column {
+                width: 50%;
+            }
+        }
+        @media (max-width:767px)
+        {
+            .img {
+                max-width:200px;
+            }
+        }
+        @media (max-width:479px)
+        {
+            h4 {
+                font-size:20px;
+            }
+            .img {
+                max-width: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html"><img src="logo-06.png" class="header"/></a>
+        <nav>
+            <ul>
+                <li><a href="about_us.html">About Us</a> </li>
+                <li><a style = "text-decoration: underline; text-underline-position: under; box-sizing: border-box;"href="products.html">Shop</a> </li>
+                <li><a href="catering.html">Catering</a> </li>
+                <li><a href="gifts.html">Gifts</a> </li>
+                <li><a href="workshops_events.html">Events</a> </li>
+                <li><a href="contact.html" >Contact Us</a> </li>
+            </ul>
+        </nav>
+
+        <div class="burger" id = "bur">
+            <img src="burger.png" class="burger" onclick="show()">
+        </div>
+
+        <div class="oBurger" id = "burger">
+            <ul id = "burgerUl">
+                <li><a href="about_us.html">About Us</a> </li>
+                <li><a style = "text-decoration: underline; text-underline-position: under; box-sizing: border-box;" href="products.html">Shop</a> </li>
+                <li><a href="catering.html">Catering</a> </li>
+                <li><a href="gifts.html">Gifts</a> </li>
+                <li><a href="workshops_events.html">Events</a> </li>
+                <li><a href="contact.html" >Contact Us</a> </li>
+            </ul>
+        </div>
+
+
+    </header>
+    <div id = "products">
+        <h1>General Catalog</h1>
+        <div class="choose" style="text-align:center;">
+            <h3 style="display:inline"> <a id="choo" href=#chocobars>Chocolate Bars</a> &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp;</h3>
+            <h3 style="display:inline"> <a id="choo" href=#cc+mf>Chocolate Classics + Mixed Fruits</a> &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp;</h3>
+            <h3 style="display:inline"> <a id="choo" href=#st>Signature Truffles</a> &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp;</h3>
+            <h3 style="display:inline"> <a id="choo" href=#chocoBakery>Chocolate Bakery</a> &nbsp; &nbsp; &nbsp;</h3>
+        </div>
+        <br><br>
+        <div id = "chocobars">
+            <h2> &nbsp; &nbsp;Chocolate Bars</h2>
+            <div class = "column">
+                <img class = "img" src="https://www.linkpicture.com/q/extra-dark-chocolate-bar.png">
+                <h4 name = "product">Extra Dark Chocolate Bar</h4>
+                <p>Our 85% cocoa chocolate bar is for those who love their dark chocolate. </p>
+                <p name = "price">$</p>
+            </div>
+            <div class = "column">
+                <img class = "img" src="https://www.linkpicture.com/q/chili-chocolate-bar.png">
+                <h4 name = "product">Chili Chocolate Bar</h4>
+                <p>Perfect for those who like their chocolate with a kick</p>
+                <p name = "price">$</p>
+            </div>
+
+            <div class = "column">
+                <img class = "img" src="https://www.linkpicture.com/q/hazelnut-bar.png">
+                <h4 name = "product">Hazelnut Swirl Chocolate Bar</h4>
+                <p>Swirl of milk and white chocolate filled with hazelnuts.</p>
+                <p name = "price">$</p>
+            </div>
+            <div class = "column">
+                <img class = "img" src="https://www.linkpicture.com/q/walnut.png">
+                <h4 name = "product">Walnut Chocolate Bar</h4>
+                <p>Delicious milk chocolate filled with walnuts</p>
+                <p name = "price">$</p>
+            </div>
+        </div>
+        <h3>&nbsp;</h3>
+        <br>
+        <div id="cc+mf">
+            <h2> &nbsp; &nbsp; Chocolate Classics + Mixed Fruits </h2>
+            <div class = "column">
+                <img class = "img" src="https://www.linkpicture.com/q/actual_caramel.jpeg">
+                <h4 name = "product">  Caramel lover's Dream</h4>
+                <p>36 delectable caramel bites in here. Twelve different kinds, three of each.</p>
+                <p name = "price">$</p>
+            </div>
+            <div class = "column">
+                <img class = "img" src="https://www.linkpicture.com/q/chocolate_caviar.jpeg">
+                <h4 name = "product">Chocolate Caviar</h4>
+                <p> Luxurious chocolate pearls in a prestigious gold or silver push-to-open tin. </p>
+                <p name = "price">$</p>
+            </div>
+            <div class = "column">
+                <img class = "img" src="https://www.linkpicture.com/q/coffee_choc.png">
+                <h4 name = "product">Coffee Infused Chocolate</h4>
+                <p>For those who want to have a chocolatey start to their morning</p>
+                <p name = "price">$</p>
+            </div>
+            <div class = "column">
+                <img class = "img" src="https://www.linkpicture.com/q/pb-j_1.png">
+                <h4 name = "product">PB&J Chocolate Cups</h4>
+                <p>Delicate chocolate cups filled with peanut butter and jam</p>
+                <p name = "price">$</p>
+            </div>
+            <div class = "column">
+                <img class = "img" src="https://www.linkpicture.com/q/random-choc.png">
+                <h4 name = "product">Random Mixed Chocolate</h4>
+                <p>Boxes feature between 10-20 flavors, dark outside, different inside,
+                depending on season and all are delicious! </p>
+                <p name = "price">$</p>
+            </div>
+            <div class = "column">
+                <img class = "img" src = "https://bit.ly/3G27CLu">
+                <br \>
+                <h4 name = "product">Chocolate Dipped Fruits</h4>
+                <p> Healthy delicious chocolate covered fruits
+                blanketed in premium gourmet chocolate, the ultimate combo.</p>
+                <p name = "price">$</p>
+            </div>
+            <div class = "column">
+                <img class = "img" src="https://www.linkpicture.com/q/blue_choc.png">
+                <h4 name = "product">Blueberry Gourmet Chocolate</h4>
+                <p>Rêve au Chocolat's Whole California blueberry hand-dipped in our
+                own gourmet dark chocolate, complimented in our beautiful gift box.</p>
+                <p name = "price">$</p>
+
+            </div>
+            <div class = "column">
+                <img class = "img" src = "https://bit.ly/3B4m6XC">
+                <h4 name = "product">Chocolate Covered Apricots</h4>
+                <p>Rêve au Chocolat's Whole California apricots hand-dipped in our own
+                gourmet dark chocolate, complimented in our beautiful gift box.</p>
+                <p name = "price">$</p>
+            </div>
+        </div>
+        <h3>&nbsp;</h3>
+        <div id="st">
+            <h2> &nbsp; &nbsp; Signature Truffles </h2>
+            <div class = "column">
+                <img class = "img" src="https://www.linkpicture.com/q/Rêve-au-Chocolat_1.png">
+                <h4 name = "product">Rêve au Chocolat Classic Truffles</h4>
+                <p>Our original truffle never gets old. Enjoy nine of them a pack.</p>
+                <p name = "price">$</p>
+            </div>
+            <div class = "column">
+                <img class = "img" src="https://www.linkpicture.com/q/three_layer_1.png">
+                <h4 name = "product">Three Layer</h4>
+                <p>Our three-layer milk chocolate truffle has a layer of milk
+                chocolate, a layer of walnut ganache finished with a layer of dark chocolate. </p>
+                <p name = "price">$</p>
+            </div>
+            <div class = "column">
+                <img class = "img" src="https://www.linkpicture.com/q/strawberry_2.png">
+                <h4 name = "product">Strawberry</h4>
+                <p>The strawberry explosion from the middle coupled with the
+                double chocolate coating is a delight you shouldn’t miss out on!</p>
+                <p name = "price">$</p>
+            </div>
+            <div class = "column">
+                <img class = "img" src="https://www.linkpicture.com/q/bourbon_1.png">
+                <h4 name = "product">Bourbon Truffle</h4>
+                <p>Milk chocolate ganache infused with bourbon coated with milk chocolate</p>
+                <p name = "price">$</p>
+            </div>
+            <div class = "column">
+                <img class = "img" src="https://www.linkpicture.com/q/cinnamon-truffle.png">
+                <h4 name = "product">Cinnamon Truffle</h4>
+                <p>Our cinnamon truffle is a must have during the holiday
+                season. This cinnamony delicacy is a must have.</p>
+                <p name = "price">$</p>
+            </div>
+            <div class = "column">
+                <img class = "img" src="https://www.linkpicture.com/q/pistachio_truffle.png">
+                <h4 name = "product">Pistachio</h4>
+                <p>Twelve of our most famous truffles, all containing pistachios.</p>
+                <p name = "price">$</p>
+            </div>
+            <div class = "column">
+                <img class = "img" src="https://www.linkpicture.com/q/mystery_truffle.png">
+                <h4 name = "product">Mystery</h4>
+                <p>Our monthly mystery flavor truffles will leave you stumped and delighted. </p>
+                <p name = "price">$</p>
+            </div>
+            <div class = "column">
+                <img class = "img" src="https://www.linkpicture.com/q/coconut_truffle.png">
+                <h4 name = "product">Coconut Truffle</h4>
+                <p>Dark chocolate ganache infused with coconut covered in coconut flakes.</p>
+                <p name = "price">$</p>
+            </div>
+
+        </div>
+        <h3>&nbsp;</h3>
+        <div id = "products">
+            <h2 id = "chocoBakery"> &nbsp; &nbsp; Chocolate bakery</h2>
+            <div class = "column">
+                <img class = "img" src="https://www.linkpicture.com/q/cupcakes.png">
+                <h4 name = "product">72% Dark Chocolate Cupcakes</h4>
+                <p>The perfect cupcake for all dark chocolate lovers</p>
+                <p name = "price">$</p>
+            </div>
+            <div class = "column">
+                <img class = "img" src="https://www.linkpicture.com/q/house_brownie.jpeg">
+                <h4 name = "product">House brownie</h4>
+                <p>A chocolate brownie or simply a brownie is a square or rectangular chocolate baked confection.</p>
+                <p name = "price">$</p>
+            </div>
+            <div class = "column">
+                <img class = "img" src="https://www.linkpicture.com/q/tiramisu.jpeg">
+                <h4 name = "product">Chocolate Tiramisu Cake</h4>
+                <p>Think of everything you love about chocolate cheesecake and melt-in-your-mouth tiramisu.</p>
+                <p name = "price">$</p>
+            </div>
+            <div class = "column">
+                <img class = "img" src="https://www.linkpicture.com/q/nutcracker.png">
+                <h4 name = "product">Nutcracker</h4>
+                <p>Hazelnut cake, caramel creme brulee, crunchy hazelnut gianduja, milk chocolate mousse, chocolate decor </p>
+                <p name = "price">$</p>
+            </div>
+        </div>
+        <br \> <br>
+        <h3>&nbsp;</h3>
+    </div>
+    <div class = "total" id ="submit">
+        <h3 id = "total">Get Total</h3>
+    </div>
+    <h3 id = "totalMes"></h3>
+    <footer>
+        &copy; 2021 Rêve au Chocolat – 23 Fausse Street, Cambridge, MA – (617) 555 0113
+    </footer>
+
+    <script language = "javascript">
+
+        function product(name, cost)
+        {
+            this.name = name;
+            this.cost = cost;
+        }
+
+        menuItems = new Array(
+            new product("Extra Dark Chocolate Bar", 20),
+            new product("Chilli Chocolate Bar", 20),
+            new product("Hazelnut Swirl Chocolate Bar", 20),
+            new product("Walnut Chocolate Bar", 20),
+            new product("Caramel lover's Dream", 60),
+            new product("Chocolate Caviar" , 50),
+            new product("Coffee Infused Chocolate", 40),
+            new product("PB&J Chocolate Chips", 40),
+            new product("Random Mixed Chocolate" , 30),
+            new product("Chocolate Dipped Fruit" , 65),
+            new product("Bluberry Gourmet Chocolate" , 35),
+            new product("Chocolate Covered Apricots" , 35),
+            new product("Rêve au Chocolat Classic Truffles" , 28),
+            new product("Three-Layer Truffles" , 30),
+            new product("Strawberry Truffle", 30),
+            new product("Bourbon Truffle", 30),
+            new product("Cinnamon Truffle", 30),
+            new product("Pistachio Truffle", 30),
+            new product("Mystery Flavor Truffle", 30),
+            new product("Coconut Truffle", 30),
+            new product("72% Dark Chocolate Cupcakes", 30),
+            new product("House Brownie", 30),
+            new product("Chocolate Tiramisu Cake", 30),
+            new product("Nutcracker", 10),
+        );
+
+        window.onload = function()
+        {
+            for (i = 0; i < menuItems.length; i++)
+            {
+                select = makeSelect("quan" + i, 0, 10);
+                document.getElementsByName("product")[i].innerHTML = menuItems[i].name;
+                document.getElementsByName("price")[i].innerHTML = "$" + menuItems[i].cost.toFixed(2) + "&nbsp;&nbsp;&nbsp;&nbsp;" + select;
+            }
+        }
+
+        function makeSelect(name, minRange, maxRange)
+        {
+            var t= "";
+            t = "<select id='" + name + "' size='1'>";
+            for (j=minRange; j<=maxRange; j++)
+            t += "<option value=" + j+ ">" + j + "</option>";
+            t+= "</select>";
+            return t;
+        }
+
+        $(document).ready(function() {
+            $("#submit").click(function() {
+                var totalQuantity = 0;
+                var totalCost = 0;
+                var msg = "";
+                for (i = 0; i< menuItems.length; i++)
+                {
+                    var quan = document.getElementById("quan" + i).value;
+                    if (quan != 0)
+                    {
+                        var cost = (menuItems[i].cost * quan);
+                        msg += quan + " " + menuItems[i].name + " $" + cost + "<br>";
+                        totalCost += parseFloat(cost);
+                    }
+                }
+                msg += "Total Price: $" + totalCost;
+                document.getElementById("totalMes").innerHTML = msg;
+            });
+        });
+
+        function show() {
+            if (document.getElementById("burger").style.display == "none") {
+                document.getElementById("burger").style.display = "block";
+            } else {
+                document.getElementById("burger").style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
