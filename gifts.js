@@ -4,6 +4,9 @@ var qs = require('querystring');
 const MongoClient = require('mongodb').MongoClient;
 const url = "mongodb+srv://amille26:cs20final@cluster0.ktqrs.mongodb.net/reveauchocolat?retryWrites=true&w=majority";
 
+var port = process.env.PORT || 3000;
+// var port = 8080;
+
 http.createServer(function (req, res) {
 	file1 = 'gifts.html';
     fs.readFile(file1, function(err, txt) {
@@ -129,4 +132,4 @@ http.createServer(function (req, res) {
 		});
 	});
 
-}).listen(8080);
+}).listen(port);
