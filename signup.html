@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+
+   <head>
+      <title>Contact</title>
+
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta charset="utf-8">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600;700&display=swap" rel="stylesheet">
+
+      <link rel="stylesheet" href="stylecontact.css">
+
+      <link rel="stylesheet" href="style.css">
+
+      <style type="text/css">
+
+      nav, .burger{
+        padding-bottom: 30px;
+      }
+      </style>
+
+
+   </head>
+
+   <body>
+     <script language="javascript">
+
+         function validateForm(){
+           var alertBox = "", issue = 0;
+
+           var nameInput = document.forms["input"]["name"].value;
+           if (nameInput == ""){
+             alertBox += "Your Name is Required\n";
+             issue++;
+           }
+           console.log(alertBox);
+
+           var emailFormat = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+           var emailInput = document.forms["input"]["email"].value;
+           if (emailInput == "" || !emailInput.match(emailFormat)){
+             alertBox += "Email is Empty or Incorrectly Typed\n";
+             issue++;
+           }
+           console.log(alertBox);
+
+           var phoneFormat = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+           var phoneInput = document.forms["input"]["phone"].value;
+           if (phoneInput == "" || !phoneInput.match(phoneFormat)){
+             alertBox += "Phone Number is Empty or Incorrectly Typed\n";
+             issue++;
+           }
+
+           var messInput = document.forms["input"]["message"].value;
+           if (messInput == ""){
+             alertBox += "A Message is Required\n";
+             issue++;
+           }
+           console.log(alertBox);
+           if (issue != 0){
+             alert(alertBox);
+             return false;
+           }
+         }
+
+         function show() {
+             if (document.getElementById("burger").style.display == "none") {
+                 document.getElementById("burger").style.display = "block";
+             } else {
+                 document.getElementById("burger").style.display = "none";
+             }
+         }
+
+
+     </script>
+
+     <header>
+            <a href="index.html"><img src="logo-06.png" class="header"/></a>
+            <nav>
+                <ul>
+                    <li><a href="index.html" style = "padding-left = 1%;">Home</a> </li>
+                    <li><a href="about_us.html">About Us</a> </li>
+                    <li><a href="products.html">Shop</a> </li>
+                    <li><a href="catering.html">Catering</a> </li>
+                    <li><a href="gifts.html">Gifts</a> </li>
+                    <li><a href="workshops_events.html">Events</a> </li>
+                    <li><a style = "text-decoration: underline; text-underline-position: under; box-sizing: border-box;" href="contact.html" >Contact Us</a> </li>
+                </ul>
+            </nav>
+
+            <div class="burger" id = "bur">
+                <img src="burger.png" class="burger" onclick="show()">
+            </div>
+
+            <div class="oBurger" id = "burger">
+                <ul id = "burgerUl">
+                    <li><a href="index.html">Home</a> </li>
+                    <li><a href="about_us.html">About Us</a> </li>
+                    <li><a href="products.html">Shop</a> </li>
+                    <li><a href="catering.html">Catering</a> </li>
+                    <li><a href="gifts.html">Gifts</a> </li>
+                    <li><a href="workshops_events.html">Events</a> </li>
+                    <li><a style = "text-decoration: underline; text-underline-position: under; box-sizing: border-box;" href="contact.html" >Contact Us</a> </li>
+                </ul>
+            </div>
+
+
+    </header>
+
+    <div class="contact">
+
+      <h1>Sign Up</h1>
+
+      <br />
+      <form name= "input" action='#' method='post' onsubmit="return validateForm()">
+      <label style="float:left">First name*:&nbsp;</label> <input type="text" name='fname' id='the_fname' required='1' style="float:left" >
+
+      <label style="float:left">&nbsp;&nbsp;&nbsp;Last name*:&nbsp;</label> <input type="text" name='lname' id='the_lname' required='1' style="float:left"><br />
+      <br />
+      <br />
+
+      <label>Email address*:</label> <input type="text" name='email' id='the_email' required='1'><br />
+      <br />
+
+      <label>Password*:</label> <input type="password" name='pass' id='the_pass' required='1'><br />
+      <br />
+
+      <label>Phone number*:</label> <input type="text" name='phone' id='the_phone' value="xxx-xxx-xxxx" required='1'><br />
+      <br />
+
+      <label>Street*:</label> <input type="text" name='street' id='the_street' required='1'><br />
+      <br />
+
+      <label>City*:</label> <input type="text" name='city' id='the_city' required='1'><br />
+      <br />
+
+      <label style="float:left">State*:&nbsp;</label>
+        <select name="state" id='the_state' required='1' size='1' style="float:left">;
+          <option></option>;
+          <option>AL</option>;
+          <option>AK</option>;
+          <option>AZ</option>;
+          <option>AR</option>;
+          <option>CA</option>;
+          <option>CZ</option>;
+          <option>CO</option>;
+          <option>CT</option>;
+          <option>DE</option>;
+          <option>DC</option>;
+          <option>FL</option>;
+          <option>GA</option>;
+          <option>GU</option>;
+          <option>HI</option>;
+          <option>ID</option>;
+          <option>IL</option>;
+          <option>IN</option>;
+          <option>IA</option>;
+          <option>KS</option>;
+          <option>KY</option>;
+          <option>LA</option>;
+          <option>ME</option>;
+          <option>MD</option>;
+          <option>MA</option>;
+          <option>MI</option>;
+          <option>MN</option>;
+          <option>MS</option>;
+          <option>MO</option>;
+          <option>MT</option>;
+          <option>NE</option>;
+          <option>NV</option>;
+          <option>NH</option>;
+          <option>NJ</option>;
+          <option>NM</option>;
+          <option>NY</option>;
+          <option>NC</option>;
+          <option>ND</option>;
+          <option>OH</option>;
+          <option>OK</option>;
+          <option>OR</option>;
+          <option>PA</option>;
+          <option>PR</option>;
+          <option>RI</option>;
+          <option>SC</option>;
+          <option>SD</option>;
+          <option>TN</option>;
+          <option>TX</option>;
+          <option>UT</option>;
+          <option>VT</option>;
+          <option>VI</option>;
+          <option>VA</option>;
+          <option>WA</option>;
+          <option>WV</option>;
+          <option>WI</option>;
+          <option>WY</option>;
+    	  </select>
+      <label style="float:left">&nbsp;&nbsp;&nbsp;Zip*:&nbsp;</label> <input type="text" name='zip' id='the_zip' required='1' style="float:left"><br />
+      <br />
+
+
+      <input type = "submit" class = "submit" value = "Submit">
+    </div>
+
+     <div id="footer">
+       <footer>
+         &copy; 2021 Rêve au Chocolat – 23 Fausse Street, Cambridge, MA – (617) 555 0113
+       </footer>
+     </div>
+
+
+   </body>
+
+</html>
