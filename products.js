@@ -45,8 +45,8 @@ app.get('/', (req, res) => {
                 res.write("<li><a href='catering.html'>Catering</a></li><li><a href='gifts.html'>Gifts</a></li>");
                 res.write("<li><a href='workshops_events.html'>Events</a></li><li><a href='contact.html'>Contact Us</a></li></ul></nav>");
 				res.write("<div class='burger' id = 'bur'><img src='https://ajmiller00.github.io/Midterm/burger.png' class='burger' onclick='show()'></div>");
-				res.write("<div class='oBurger' id = 'burger'><ul id = 'burgerUl'><li><a href='about_us.html'>About Us</a></li><li><a href='products.html'>Shop</a></li>");
-                res.write("<li><a href='catering.html'>Catering</a></li><li><a style = 'text-decoration: underline; text-underline-position: under; box-sizing: border-box;' href='gifts.html'>Gifts</a></li>");
+				res.write("<div class='oBurger' id = 'burger'><ul id = 'burgerUl'><li><a href='about_us.html'>About Us</a></li><li><a style = 'text-decoration: underline; text-underline-position: under; box-sizing: border-box;' href='products.html'>Shop</a></li>");
+                res.write("<li><a href='catering.html'>Catering</a></li><li><a href='gifts.html'>Gifts</a></li>");
                 res.write("<li><a href='workshops_events.html'>Events</a></li><li><a href='contact.html'>Contact Us</a></li></ul></div></header>");
 
                 res.write("<div id = 'products'><h1>General Catalog</h1><div class='choose' style='text-align:center;'>");
