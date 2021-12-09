@@ -51,7 +51,7 @@ app.get('/', (req, res) => {
 
                 res.write("<div id = 'products'><h1>General Catalog</h1><div class='choose' style='text-align:center;'>");
             	res.write("<h3 style='display:inline'> <a id='choo' href=#chocobars>Chocolate Bars</a> &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp;</h3>");
-            	res.write("<h3 style='display:inline'> <a id='choo' href=#cc+mf>Chocolate Classics + Mixed Fruits</a> &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp;</h3>");
+            	res.write("<h3 style='display:inline'> <a id='choo' href=#ccmf>Chocolate Classics + Mixed Fruits</a> &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp;</h3>");
             	res.write("<h3 style='display:inline'> <a id='choo' href=#st>Signature Truffles</a> &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp;</h3>");
             	res.write("<h3 style='display:inline'> <a id='choo' href=#chocoBakery>Chocolate Bakery</a> &nbsp; &nbsp; &nbsp;</h3></div><br><br>");
                 
@@ -86,12 +86,12 @@ app.get('/', (req, res) => {
 		    } 
 		    else 
 		    {
-            	res.write("<div id = 'chocobars'><h2> &nbsp; &nbsp;Chocolate Bars</h2>");
+            	res.write("<div id = \"chocobars\"><h2> &nbsp; &nbsp;Chocolate Bars</h2>");
             	for (i=0; i<items.length; i++) {
 	            	res.write("<div class = 'column'><img class = 'img' src=\"https://ajmiller00.github.io/Midterm/" + items[i].img + "\">");
 	            	res.write("<h4 name = 'product'>" + items[i].name + "</h4>");
 	                res.write("<p>" + items[i].desc + "</p><p name = 'price'>$</p></div>");
-	                res.write("<script language = 'javascript'>makeSelect(\"quan\" + " + i + ", 0, 10);</script>");
+	                res.write("<script language = 'javascript'>makeSelect('quan' + " + i + ", 0, 10);</script>");
 	            }
 
 		    } 
@@ -107,12 +107,12 @@ app.get('/', (req, res) => {
 		    } 
 		    else 
 		    {
-		    	res.write("</div><h3>&nbsp;</h3><br><div id='cc+mf'><h2> &nbsp; &nbsp; Chocolate Classics + Mixed Fruits </h2>");
+		    	res.write("</div><h3>&nbsp;</h3><br><div id=\"ccmf\"><h2> &nbsp; &nbsp; Chocolate Classics + Mixed Fruits </h2>");
 	        	for (i=0; i<items.length; i++) {
 	            	res.write("<div class = 'column'><img class = 'img' src=\"https://ajmiller00.github.io/Midterm/" + items[i].img + "\">");
 	            	res.write("<h4 name = 'product'>" + items[i].name + "</h4>");
 	                res.write("<p>" + items[i].desc + "</p><p name = 'price'>$</p></div>");
-	                res.write("<script language = 'javascript'></script>");
+	                res.write("<script language = 'javascript'>makeSelect('quan' + " + i + ", 0, 10);</script>");
 	            }
 		    } 
 		});
@@ -127,12 +127,12 @@ app.get('/', (req, res) => {
 		    } 
 		    else 
 		    {
-		    	res.write("</div><h3>&nbsp;</h3><br><div id='st'><h2> &nbsp; &nbsp; Signature Truffles </h2>");
+		    	res.write("</div><h3>&nbsp;</h3><br><div id=\"st\"><h2> &nbsp; &nbsp; Signature Truffles </h2>");
 	        	for (i=0; i<items.length; i++) {
 	            	res.write("<div class = 'column'><img class = 'img' src=\"https://ajmiller00.github.io/Midterm/" + items[i].img + "\">");
 	            	res.write("<h4 name = 'product'>" + items[i].name + "</h4>");
 	                res.write("<p>" + items[i].desc + "</p><p name = 'price'>$</p></div>");
-	    			res.write("<script language = 'javascript'>makeSelect(\"quan\" + " + i + ", 0, 10);</script>");
+	    			res.write("<script language = 'javascript'>makeSelect('quan' + " + i + ", 0, 10);</script>");
 	            }
 		    } 
 		});
@@ -147,12 +147,12 @@ app.get('/', (req, res) => {
 		    } 
 		    else 
 		    {
-		    	res.write("</div><h3>&nbsp;</h3><br><div id='chocoBakery'><h2> &nbsp; &nbsp; Chocolate Bakery </h2>");
+		    	res.write("</div><h3>&nbsp;</h3><br><div id=\"chocoBakery\"><h2> &nbsp; &nbsp; Chocolate Bakery </h2>");
 	        	for (i=0; i<items.length; i++) {
 	            	res.write("<div class = 'column'><img class = 'img' src=\"https://ajmiller00.github.io/Midterm/" + items[i].img + "\">");
 	            	res.write("<h4 name = 'product'>" + items[i].name + "</h4>");
 	                res.write("<p>" + items[i].desc + "</p><p name = 'price'>$</p></div>");
-	    			res.write("<script language = 'javascript'>makeSelect(\"quan\" + " + i + ", 0, 10);</script>");
+	    			res.write("<script language = 'javascript'>makeSelect('quan' + " + i + ", 0, 10);</script>");
 	            }
 	            res.write("</div><br><br><h3>&nbsp;</h3></div>");
 
