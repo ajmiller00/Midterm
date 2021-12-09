@@ -33,7 +33,7 @@ app.get('/', (req, res) => {
     			res.write("<link rel='preconnect' href='https://fonts.googleapis.com'><link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>");
     			res.write("<link href='https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600;700&display=swap' rel='stylesheet'><link href='https://fonts.googleapis.com/css2?family=Amaranth&display=swap' rel='stylesheet'>");
 
-				res.write("<title>Gifts</title><link rel = 'stylesheet' type = 'text/css' href = 'https://ajmiller00.github.io/Midterm/style.css'>");
+			res.write("<title>Gifts</title><link rel = 'stylesheet' type = 'text/css' href = 'https://ajmiller00.github.io/Midterm/style.css'>");
     			res.write("<style type = 'text/css'> body { font-family: 'Amaranth', sans-serif; } .img { max-width: 290px; max-height: 330px; background-size: cover; }");
         		res.write(".column { float: left; width: 25%; padding: 10px; height: 600px; border-right: 2px solid #003267; border-left: 2px solid #003267; font-weight: 600pt; font-size: 24pt; text-align:center; box-sizing: border-box;}");
         		res.write("h2 { text-align: left; font-size: 25pt; font-weight: 900; } h4 { font-size:  25px; color: #003267; } p { font-size: 15px; font-weight:300; }");
@@ -41,15 +41,23 @@ app.get('/', (req, res) => {
         		res.write("@media (max-width: 991px) { .column { width: 50%; } } @media (max-width:767px) { .img { max-width:200px; } }");
        			res.write("@media (max-width:479px) { h4 { font-size:20px; } .img { max-width: 150px; } } </style></head>");
 
-       			res.write("<body><header><a href='index.html'><img src='https://ajmiller00.github.io/Midterm/logo-06.png' class='header'/></a>");
-            	res.write("<nav><ul><li><a href='about_us.html'>About Us</a></li><li><a href='products.html'>Shop</a></li>");
-                res.write("<li><a href='catering.html'>Catering</a></li><li><a style = 'text-decoration: underline; text-underline-position: under; box-sizing: border-box;' href='gifts.html'>Gifts</a></li>");
-                res.write("<li><a href='workshops_events.html'>Events</a></li><li><a href='contact.html'>Contact Us</a></li></ul></nav>");
-				res.write("<div class='burger' id = 'bur'><img src='https://ajmiller00.github.io/Midterm/burger.png' class='burger' onclick='show()'></div>");
-				res.write("<div class='oBurger' id = 'burger'><ul id = 'burgerUl'><li><a href='about_us.html'>About Us</a></li><li><a href='products.html'>Shop</a></li>");
-                res.write("<li><a href='catering.html'>Catering</a></li><li><a style = 'text-decoration: underline; text-underline-position: under; box-sizing: border-box;' href='gifts.html'>Gifts</a></li>");
-                res.write("<li><a href='workshops_events.html'>Events</a></li><li><a href='contact.html'>Contact Us</a></li></ul></div></header>");
+       			res.write("<header><a href='https://ajmiller00.github.io/Midterm/index.html'><img src='https://ajmiller00.github.io/Midterm/logo-06.png' class='header'/></a><nav>");
+                	res.write("<ul><li><a href='https://ajmiller00.github.io/Midterm/about_us.html'>About Us</a></li>");
+                    	res.write("<li><a href='https://reveauchocolat-products.herokuapp.com/'>Shop</a> </li>");
+                    	res.write("<li><a href='https://ajmiller00.github.io/Midterm/catering.html'>Catering</a> </li>");
+                    	res.write("<li><a style = 'text-decoration: underline; text-underline-position: under; box-sizing: border-box;'href='https://reveauchocolat-gifts.herokuapp.com/'>Gifts</a> </li>");
+                    	res.write("<li><a href='https://ajmiller00.github.io/Midterm/workshops_events.html'>Events</a> </li>");
+                    	res.write("<li><a href='https://ajmiller00.github.io/Midterm/contact.html' >Contact Us</a> </li></ul></nav>");
 
+    			res.write("<div class='burger' id = 'bur'><img src='burger.png' class='burger' onclick='show()'></div><div class='oBurger' id = 'burger'>");
+                	res.write("<ul id = 'burgerUl'><li><a href='https://ajmiller00.github.io/Midterm/about_us.html'>About Us</a></li>");
+                    	res.write("<li><a href='https://reveauchocolat-products.herokuapp.com/'>Shop</a> </li>");
+                    	res.write("<li><a href='https://ajmiller00.github.io/Midterm/catering.html'>Catering</a> </li>");
+                    	res.write("<li><a style = 'text-decoration: underline; text-underline-position: under; box-sizing: border-box;'href='https://reveauchocolat-gifts.herokuapp.com/'>Gifts</a> </li>");
+                    	res.write("<li><a href='https://ajmiller00.github.io/Midterm/workshops_events.html'>Events</a> </li>");
+                    	res.write("<li><a href='https://ajmiller00.github.io/Midterm/contact.html' >Contact Us</a> </li></ul></div></header>");
+			res.write("<body>");
+         
                 res.write("<div id = 'products'><h1>Gifts</h1>");
                 
 		    	res.write("<script language = 'javascript'>");
