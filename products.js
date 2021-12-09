@@ -6,7 +6,8 @@ const app = express();
 const MongoClient = require('mongodb').MongoClient;
 const url = "mongodb+srv://amille26:cs20final@cluster0.ktqrs.mongodb.net/reveauchocolat?retryWrites=true&w=majority";
 
-var port = 8080;
+var port = process.env.PORT || 3000;
+// var port = 8080;
 
 app.get('/', (req, res) => {
 
