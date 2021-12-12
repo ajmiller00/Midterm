@@ -285,6 +285,7 @@ app.post('/add', (req, res) => {
             };
             user.findOne(query, function (err, result ){
                 res.write("<title>Cart</title><link rel = 'stylesheet' type = 'text/css' href = 'style.css'>");
+		res.write("<div id = 'cart'>")
                 res.write("<table>");
                 res.write("<thead>");
                 res.write("<th style = 'width: 50%;'>Item</th>");
@@ -316,6 +317,7 @@ app.post('/add', (req, res) => {
                 res.write("<form method = 'POST' action = '/checkout'>")
                 res.write("<input type = 'submit' value = 'Checkout' class = 'button'></input>")
                 res.write("</form>")
+		res.write("</div>")
             });
             
         }); 
