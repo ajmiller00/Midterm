@@ -190,20 +190,15 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 
-// app.post("/add", function (req, res) {
-// 	res.sendFile(__dirname + "/index.html");
-// });
-
-app.post("/add", function (req, res) {
+app.post('/add', (req, res) => {
     MongoClient.connect(url, { useUnifiedTopology: true }, function(err, db) {
 		if (err) throw err;
 		var numItems = String(req.body.item);
         var dbo = db.db('reveauchocolat');
 		var user = dbo.collection('users');
 		var products = dbo.collection('products');
+		var currUser = dbo.collection('current');
 		
-        // NEED EMAIL
-        // NEED FORM ARRAY OF QUANTITY != 0
         const query = {
             email: "abigail.miller@tufts.edu"
 		};
@@ -235,21 +230,25 @@ app.post("/add", function (req, res) {
 			quan.push(req.body.quan22);
 			quan.push(req.body.quan23);
 		}
+
 		quan.forEach(function(item, index, array) {
 			// If user quantity is not zero
-			if ((item != 0) || (item != "undefined"))
+			if ((item != "0") && (item != undefined))
 			{
 				console.log(item, index);
 				if (numItems > 12) {
 					var productQuery = {
-						id : String(item)
+						id : String(index),
+						gift: false
 					};
 				} else {
 					var productQuery = {
-						id: String(item),
-						gifts: true
+						id: String(index),
+						gift: true
 					}
 				}
+				console.log("About to log query");
+				console.log(productQuery);
 				// Find Product item
 				products.findOne(productQuery, function (err, product) {
 					if (err) throw err;
@@ -269,9 +268,58 @@ app.post("/add", function (req, res) {
 				
 			}
 		});
-	res.end();
     })
-	
+    
+    fs.readFile('cart.html', function (err, txt) {
+        if (err) throw (err);
+        res.writeHead(200, {'Content-Type': 'text/html'});
+
+        res.write(txt);
+        MongoClient.connect(url, { useUnifiedTopology: true }, function(err, db) {
+            if(err) { return console.log(err); }
+
+            var dbo = db.db('reveauchocolat');
+            var user = dbo.collection('users');
+            var query = {
+                email: "abigail.miller@tufts.edu"
+            };
+            user.findOne(query, function (err, result ){
+                res.write("<title>Cart</title><link rel = 'stylesheet' type = 'text/css' href = 'style.css'>");
+                res.write("<table>");
+                res.write("<thead>");
+                res.write("<th style = 'width: 50%;'>Item</th>");
+                res.write("<th style = 'width: 15%;'>Quantity</th>");
+                res.write("<th style = 'width: 15%;'>Price</th>");
+                res.write("<th style = 'width: 20%;'>Total</th>");
+                res.write("</thead>");
+                res.write("<tr>");
+                res.write("<th class = 'border-bottom'></th>");
+                res.write("<th class = 'border-bottom'></th>");
+                res.write("<th class = 'border-bottom'></th>");
+                res.write("<th class = 'border-bottom'></th>");
+                res.write("</tr>");
+                var cart = result.cart;
+                for (i = 0; i < cart.length; i++)
+                {
+                    var item = cart[i].cart_item;
+                    var quantity = cart[i].cart_quantity;
+                    var price = cart[i].cart_price;
+                    var total = quantity * price;
+                    res.write("<tr>");
+                    res.write("<td style = 'width: 20%;'>" + item + "</td>");
+                    res.write("<td style = 'width: 15%;'>" + quantity + "</td>");
+                    res.write("<td style = 'width: 15%;'> $" + price + "</td>");
+                    res.write("<td style = 'width: 20%;'> $" + total + "</td>");
+                    res.write("</tr>")
+                }
+                res.write("</table>");
+                res.write("<form method = 'POST' action = '/checkout'>")
+                res.write("<input type = 'submit' value = 'Checkout' class = 'button'></input>")
+                res.write("</form>")
+            });
+            
+        }); 
+    })
 })
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
