@@ -233,7 +233,7 @@ app.post('/add', (req, res) => {
 		}
 		currUser.findOne({current: "current"}, function (err, user) {
 			var query = {
-				email : user.email;
+				email : user.email
 			}
 			quan.forEach(function(item, index, array) {
 				// If user quantity is not zero
