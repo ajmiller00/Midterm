@@ -310,7 +310,8 @@ app.post('/add', (req, res) => {
 			});
 		}); // end finding curr user
 	    res.write("<div id = 'add'> <br><br><br><br> Added to Cart <br> <br>");
-	    res.write("<a href = 'https://reveauchocolat-cart.herokuapp.com/'>View Your Cart Here</a><br><br><br></div>");
+// 	    res.write("<a href = 'https://reveauchocolat-cart.herokuapp.com/'>View Your Cart Here </a> <br><br><br>")
+	res.write("</div>");
 	    res.write("<footer>&copy; 2021 Rêve au Chocolat – 23 Fausse Street, Cambridge, MA – (617) 555 0113</footer>")
 	    res.end();
     })
