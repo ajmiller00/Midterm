@@ -309,7 +309,7 @@ app.post('/add', (req, res) => {
 				}
 			});
 		}); // end finding curr user
-	    res.write("Added to Cart");
+	    res.write("<div id = 'add'> Added to Cart </div>");
 	    res.end();
     })
 })
