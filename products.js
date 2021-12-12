@@ -64,6 +64,7 @@ app.get('/', (req, res) => {
             	res.write("<h3 style='display:inline'> <a id='choo' href=#st>Signature Truffles</a> &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp;</h3>");
             	res.write("<h3 style='display:inline'> <a id='choo' href=#chocoBakery>Chocolate Bakery</a> &nbsp; &nbsp; &nbsp;</h3></div><br><br>");
                 
+			res.write("<form method = 'POST' action = '/add'>")
 		    	res.write("<script language = 'javascript'>");
     			res.write("function product(name, cost) { this.name = name; this.cost = cost; } ");
 		    	res.write("menuItems = new Array(");
@@ -73,7 +74,7 @@ app.get('/', (req, res) => {
             	}
                 res.write(");");
 				
-				res.write("function makeSelect(name, minRange, maxRange){ var t= \"\"; t = \"<select id='\" + name + \"' size='1'>\"; for (j=minRange; j<=maxRange; j++)"); //
+				res.write("function makeSelect(name, minRange, maxRange){ var t= \"\"; t = \"<select name='\" + name + \"' size='1'>\"; for (j=minRange; j<=maxRange; j++)"); //
 				res.write("t += \"<option value=\" + j+ \">\" + j + \"</option>\"; t+= \"</select>\"; return t; }"); // 
 				
 				res.write("$(document).ready(function() { $('#submit').click(function() { var totalQuantity = 0; var totalCost = 0; var msg = ''; for (i = 0; i< menuItems.length; i++) {");
@@ -169,7 +170,8 @@ app.get('/', (req, res) => {
                 res.write("document.getElementsByName('price')[i].innerHTML = '$' + menuItems[i].cost.toFixed(2) + '&nbsp;&nbsp;&nbsp;&nbsp;' + select; }}");
 				res.write("window.onload = abc;</script>");
 
-    			res.write("<div class = 'total' id ='submit'><h3 id = 'total'>Get Total</h3></div><h3 id = 'totalMes'></h3>");
+    			res.write("<input type = 'submit' value = 'Get Total' class = 'total'>");
+			res.write("<input type = 'hidden' name = 'item' value = '24'></form>");
     			res.write("<footer>&copy; 2021 Rêve au Chocolat – 23 Fausse Street, Cambridge, MA – (617) 555 0113</footer> </body> </html>");
 
 		    } 
