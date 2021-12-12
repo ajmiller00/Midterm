@@ -6,15 +6,12 @@ const app = express();
 const MongoClient = require('mongodb').MongoClient;
 const bodyParser = require("body-parser");
 
-app.use(bodyParser.urlencoded({
-    extended: true
-}));
 const url = "mongodb+srv://amille26:cs20final@cluster0.ktqrs.mongodb.net/reveauchocolat?retryWrites=true&w=majority";
 
 var port = process.env.PORT || 3000;
 // var port = 8080;
 
-app.post('/', (req, res) => {
+app.get('/', (req, res) => {
 
     MongoClient.connect(url, { useUnifiedTopology: true }, function(err, db) {
         if(err) { console.log("Connection err: " + err); return; }
@@ -190,14 +187,21 @@ app.post('/', (req, res) => {
 		});
 
 	});
-	req.on('data', data => {
-		MongoClient.connect(url, { useUnifiedTopology: true }, function(err, db) {
-		if (err) throw err;
-		var numItems = String(req.body.item);
-	    	var dbo = db.db('reveauchocolat');
-		var products = dbo.collection('products');
-		var currUser = dbo.collection('current');
-		var user = dbo.collection('users');
+
+});
+
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
+
+app.post('/add', (req, res) => {
+    MongoClient.connect(url, { useUnifiedTopology: true }, function(err, db) {
+	if (err) throw err;
+	var numItems = String(req.body.item);
+    	var dbo = db.db('reveauchocolat');
+	var products = dbo.collection('products');
+	var currUser = dbo.collection('current');
+	var user = dbo.collection('users');
 		let quan = [];
 		quan.push(req.body.quan0);
 		quan.push(req.body.quan1);
@@ -265,15 +269,14 @@ app.post('/', (req, res) => {
 								}
 							}
 						)
+						res.write("Added to Cart");
 					})
 
 				}
 			});
 		}); // end finding curr user
     })
+    
 })
-
-});
-
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
