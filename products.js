@@ -193,81 +193,83 @@ app.post("/add", function (req, res) {
 	res.sendFile(__dirname + "/index.html");
 });
 
-// app.post("/add", function (req, res) {
-//     MongoClient.connect(url, { useUnifiedTopology: true }, function(err, db) {
-// 		if (err) throw err;
-// 		var numItems = String(req.body.item);
-//         var dbo = db.db('reveauchocolat');
-// 		var user = dbo.collection('users');
-// 		var products = dbo.collection('products');
+app.post("/add", function (req, res) {
+    MongoClient.connect(url, { useUnifiedTopology: true }, function(err, db) {
+		if (err) throw err;
+		var numItems = String(req.body.item);
+        var dbo = db.db('reveauchocolat');
+		var user = dbo.collection('users');
+		var products = dbo.collection('products');
 		
-//         // NEED EMAIL
-//         // NEED FORM ARRAY OF QUANTITY != 0
-//         const query = {
-//             email: "abigail.miller@tufts.edu"
-// 		};
-// 		let quan = [];
-// 		quan.push(req.body.quan0);
-// 		quan.push(req.body.quan1);
-// 		quan.push(req.body.quan2);
-// 		quan.push(req.body.quan3);
-// 		quan.push(req.body.quan4);
-// 		quan.push(req.body.quan5);
-// 		quan.push(req.body.quan6);
-// 		quan.push(req.body.quan7);
-// 		quan.push(req.body.quan8);
-// 		quan.push(req.body.quan9);
-// 		quan.push(req.body.quan10);
-// 		quan.push(req.body.quan11);
-// 		if (numItems > 12)
-// 		{
-// 			quan.push(req.body.quan12);
-// 			quan.push(req.body.quan13);
-// 			quan.push(req.body.quan14);
-// 			quan.push(req.body.quan15);
-// 			quan.push(req.body.quan16);
-// 			quan.push(req.body.quan17);
-// 			quan.push(req.body.quan18);
-// 			quan.push(req.body.quan19);
-// 			quan.push(req.body.quan20);
-// 			quan.push(req.body.quan21);
-// 			quan.push(req.body.quan22);
-// 			quan.push(req.body.quan23);
-// 		}
-// 		quan.forEach(function(item, index, array) {
-// 			// If user quantity is not zero
-// 			if ((item != 0) || (item != "undefined"))
-// 			{
-// 				console.log(item, index);
-// 				if (numItems > 12) {
-// 					var productQuery = {
-// 						id : item
-// 					};
-// 				} else {
-// 					var productQuery = {
-// 						id: item,
-// 						gifts: true
-// 					}
-// 				}
-// 				// Find Product item
-// 				products.findOne(productQuery, function (err, product) {
-// 					if (err) throw err;
-// 					// Adding the item to users cart
-// 					user.updateOne (
-// 						query,
-// 						{ $push: 
-// 							{ cart : {
-// 								cart_item : product.name,
-// 								cart_quantity: item,
-// 								cart_price: product.price
-// 								}
-// 							}
-// 						}
-// 					)
-// 				})
+        // NEED EMAIL
+        // NEED FORM ARRAY OF QUANTITY != 0
+        const query = {
+            email: "abigail.miller@tufts.edu"
+		};
+		let quan = [];
+		quan.push(req.body.quan0);
+		quan.push(req.body.quan1);
+		quan.push(req.body.quan2);
+		quan.push(req.body.quan3);
+		quan.push(req.body.quan4);
+		quan.push(req.body.quan5);
+		quan.push(req.body.quan6);
+		quan.push(req.body.quan7);
+		quan.push(req.body.quan8);
+		quan.push(req.body.quan9);
+		quan.push(req.body.quan10);
+		quan.push(req.body.quan11);
+		if (numItems > 12)
+		{
+			quan.push(req.body.quan12);
+			quan.push(req.body.quan13);
+			quan.push(req.body.quan14);
+			quan.push(req.body.quan15);
+			quan.push(req.body.quan16);
+			quan.push(req.body.quan17);
+			quan.push(req.body.quan18);
+			quan.push(req.body.quan19);
+			quan.push(req.body.quan20);
+			quan.push(req.body.quan21);
+			quan.push(req.body.quan22);
+			quan.push(req.body.quan23);
+		}
+		quan.forEach(function(item, index, array) {
+			// If user quantity is not zero
+			if ((item != 0) || (item != "undefined"))
+			{
+				console.log(item, index);
+				if (numItems > 12) {
+					var productQuery = {
+						id : item
+					};
+				} else {
+					var productQuery = {
+						id: item,
+						gifts: true
+					}
+				}
+				// Find Product item
+				products.findOne(productQuery, function (err, product) {
+					if (err) throw err;
+					// Adding the item to users cart
+					user.updateOne (
+						query,
+						{ $push: 
+							{ cart : {
+								cart_item : product.name,
+								cart_quantity: item,
+								cart_price: product.price
+								}
+							}
+						}
+					)
+				})
 				
-// 			}
-// 		});
+			}
+		});
+		db.close();
+		res.end();
 
 //     })
 // })
