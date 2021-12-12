@@ -171,7 +171,7 @@ app.get('/', (req, res) => {
                 res.write("document.getElementsByName('price')[i].innerHTML = '$' + menuItems[i].cost.toFixed(2) + '&nbsp;&nbsp;&nbsp;&nbsp;' + select; }}");
 				res.write("window.onload = abc;</script>");
 
-    			res.write("<input type = 'submit' value = 'Get Total' class = 'button'>");
+    			res.write("<input type = 'submit' value = 'Get Total' class = 'button' style = 'text-align:center'>");
 			res.write("<input type = 'hidden' name = 'item' value = '24'></form>");
     			res.write("<footer>&copy; 2021 Rêve au Chocolat – 23 Fausse Street, Cambridge, MA – (617) 555 0113</footer> </body> </html>");
 
