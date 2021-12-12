@@ -70,7 +70,7 @@ app.get('/', (req, res) => {
             	res.write("<h3 style='display:inline'> <a id='choo' href=#st>Signature Truffles</a> &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp;</h3>");
             	res.write("<h3 style='display:inline'> <a id='choo' href=#chocoBakery>Chocolate Bakery</a> &nbsp; &nbsp; &nbsp;</h3></div><br><br>");
                 
-			res.write("<form method = 'POST' action = 'https://reveauchocolat-products.herokuapp.com/'>")
+			res.write("<form method = 'POST' action = '/add'>")
 		    	res.write("<script language = 'javascript'>");
     			res.write("function product(name, cost) { this.name = name; this.cost = cost; } ");
 		    	res.write("menuItems = new Array(");
