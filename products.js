@@ -189,6 +189,10 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 
+app.get("/add", function (req, res) {
+	res.sendFile(__dirname + "/product.js");
+});
+
 app.post("/add", function (req, res) {
     MongoClient.connect(url, { useUnifiedTopology: true }, function(err, db) {
 		if (err) throw err;
