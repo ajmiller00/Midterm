@@ -288,7 +288,7 @@ app.post('/add', (req, res) => {
             var currUser = dbo.collection('current');
 	currUser.findOne({current: "current"}, function (err, user) {
 		var query = {
-			email : user.email;
+			email : user.email
 		}
 		    user.findOne(query, function (err, result ){
 			res.write("<title>Cart</title><link rel = 'stylesheet' type = 'text/css' href = 'style.css'>");
