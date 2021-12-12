@@ -60,6 +60,7 @@ app.get('/', (req, res) => {
          
                 res.write("<div id = 'products'><h1>Gifts</h1>");
                 
+			res.write("<form method = 'POST' action = '/add'>")
 		    	res.write("<script language = 'javascript'>");
     			res.write("function product(name, cost) { this.name = name; this.cost = cost; } ");
 		    	res.write("menuItems = new Array(");
@@ -69,7 +70,7 @@ app.get('/', (req, res) => {
             	}
                 res.write(");");
 				
-				res.write("function makeSelect(name, minRange, maxRange){ var t= \"\"; t = \"<select id='\" + name + \"' size='1'>\"; for (j=minRange; j<=maxRange; j++)"); //
+				res.write("function makeSelect(name, minRange, maxRange){ var t= \"\"; t = \"<select name ='\" + name + \"' size='1'>\"; for (j=minRange; j<=maxRange; j++)"); //
 				res.write("t += \"<option value=\" + j+ \">\" + j + \"</option>\"; t+= \"</select>\"; return t; }"); // 
 				
 				res.write("$(document).ready(function() { $('#submit').click(function() { var totalQuantity = 0; var totalCost = 0; var msg = ''; for (i = 0; i< menuItems.length; i++) {");
@@ -91,7 +92,8 @@ app.get('/', (req, res) => {
                 res.write("document.getElementsByName('price')[i].innerHTML = '$' + menuItems[i].cost.toFixed(2) + '&nbsp;&nbsp;&nbsp;&nbsp;' + select; }}");
 				res.write("window.onload = abc;</script>");
 
-    			res.write("<div class = 'total' id ='submit'><h3 id = 'total'>Get Total</h3></div><h3 id = 'totalMes'></h3>");
+    			res.write("<input type = 'submit' value = 'Get Total' class = 'total'>");
+			res.write("<input type = 'hidden' name = 'item' value = '12'></form>");
     			res.write("<footer>&copy; 2021 Rêve au Chocolat – 23 Fausse Street, Cambridge, MA – (617) 555 0113</footer> </body> </html>");
 
 		    } 
@@ -101,5 +103,88 @@ app.get('/', (req, res) => {
 	});
 
 });
+
+const bodyParser = require("body-parser");
+
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
+
+app.post("/add", function (req, res) {
+    MongoClient.connect(url, { useUnifiedTopology: true }, function(err, db) {
+		if (err) throw err;
+		var numItems = String(req.body.item);
+        var dbo = db.db('reveauchocolat');
+		var user = dbo.collection('users');
+		var products = dbo.collection('products');
+		
+        const query = {
+            email: "abigail.miller@tufts.edu"
+		};
+		let quan = [];
+		quan.push(req.body.quan0);
+		quan.push(req.body.quan1);
+		quan.push(req.body.quan2);
+		quan.push(req.body.quan3);
+		quan.push(req.body.quan4);
+		quan.push(req.body.quan5);
+		quan.push(req.body.quan6);
+		quan.push(req.body.quan7);
+		quan.push(req.body.quan8);
+		quan.push(req.body.quan9);
+		quan.push(req.body.quan10);
+		quan.push(req.body.quan11);
+		if (numItems > 12)
+		{
+			quan.push(req.body.quan12);
+			quan.push(req.body.quan13);
+			quan.push(req.body.quan14);
+			quan.push(req.body.quan15);
+			quan.push(req.body.quan16);
+			quan.push(req.body.quan17);
+			quan.push(req.body.quan18);
+			quan.push(req.body.quan19);
+			quan.push(req.body.quan20);
+			quan.push(req.body.quan21);
+			quan.push(req.body.quan22);
+			quan.push(req.body.quan23);
+		}
+		quan.forEach(function(item, index, array) {
+			// If user quantity is not zero
+			if ((item != 0) || (item != "undefined"))
+			{
+				console.log(item, index);
+				if (numItems > 12) {
+					var productQuery = {
+						id : item
+					};
+				} else {
+					var productQuery = {
+						id: item,
+						gifts: true
+					}
+				}
+				// Find Product item
+				products.findOne(productQuery, function (err, product) {
+					if (err) throw err;
+					// Adding the item to users cart
+					user.updateOne (
+						query,
+						{ $push: 
+							{ cart : {
+								cart_item : product.name,
+								cart_quantity: item,
+								cart_price: product.price
+								}
+							}
+						}
+					)
+				})
+				
+			}
+		});
+
+    })
+})
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
