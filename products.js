@@ -190,7 +190,7 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.get("/add", function (req, res) {
-	res.sendFile(__dirname + "/product.js");
+	res.sendFile(__dirname + "/index.html");
 });
 
 app.post("/add", function (req, res) {
