@@ -10,6 +10,7 @@ exports.addUser = async function (pdata) {
             console.log("hereee");
           var dbo = db.db("reveauchocolat");
           var collection = dbo.collection('users');
+          const collc = await (db.db("reveauchocolat").collection('current'));
 
           console.log(pdata['fname']);
 
@@ -19,6 +20,7 @@ exports.addUser = async function (pdata) {
             	} else {
                     if (items.length > 0) {
                         console.log("Email already exists");
+                        await collc.updateOne({ "current" : "current" }, {$set: {"email" : "FAILURE"}});
                         return "FAILURE"
                     } else {
                         let salt = (Math.random() + 1).toString(36).substring(7);
@@ -30,6 +32,7 @@ exports.addUser = async function (pdata) {
                             if(err) { console.log("Insert Error: " + err); return; }
                             console.log("New document inserted!");
                         });
+                        await collc.updateOne({ "current" : "current" }, {$set: {"email" : pdata['email']}});
                         return pdata['email'];
                     }
             	}

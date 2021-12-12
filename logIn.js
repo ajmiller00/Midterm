@@ -11,7 +11,9 @@ exports.LogInAuth = async (email, password) => {
     MongoClient.connect(url, { useUnifiedTopology: true }, async (err, db) => {
       if (err) return reject(err)
 
-      const coll = await (db.db("reveauchocolat").collection('users'))
+      const coll = await (db.db("reveauchocolat").collection('users'));
+      const collc = await (db.db("reveauchocolat").collection('current'));
+
 
       try {
        const items = await (await coll.find({ "email": email })).toArray()
@@ -24,8 +26,10 @@ exports.LogInAuth = async (email, password) => {
           if (hash == items[i].password) {
             // console.log("yaaaas we made it");
             name = items[i].email.toString();
+            await collc.updateOne({ "current" : "current" }, {$set: {"email" : items[i].email.toString()}});
           } else {
             name = "FAILURE";
+            await collc.updateOne({ "current" : "current" }, {$set: {"email" : "FAILURE"}});
           }
         }
       } catch (e) {
