@@ -268,9 +268,10 @@ app.post("/add", function (req, res) {
 				
 			}
 		});
-    })
 	db.close();
 	res.end();
+    })
+	
 })
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
