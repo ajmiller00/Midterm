@@ -41,17 +41,14 @@ app.get('/', (req, res) => {
        			res.write("#products { background-color: #FCECC8; } #message { text-align:center; } #submit { text-align:center; }");
         		res.write("@media (max-width: 991px) { .column { width: 50%; } } @media (max-width:767px) { .img { max-width:200px; } }");
        			res.write("@media (max-width:479px) { h4 { font-size:20px; } .img { max-width: 150px; } } </style></head>");
-			fs.readFile("https://ajmiller00.github.io/Midterm/header.html", function (err, txt) {
-				res.write(txt);
-				res.write("<body>");
-			})
-//        			res.write("<header><a href='https://ajmiller00.github.io/Midterm/index.html'><img src='https://ajmiller00.github.io/Midterm/logo-06.png' class='header'/></a><nav>");
-//                 	res.write("<ul><li><a href='https://ajmiller00.github.io/Midterm/about_us.html'>About Us</a></li>");
-//                     	res.write("<li><a style = 'text-decoration: underline; text-underline-position: under; box-sizing: border-box;' href='https://reveauchocolat-products.herokuapp.com/'>Shop</a> </li>");
-//                     	res.write("<li><a href='https://ajmiller00.github.io/Midterm/catering.html'>Catering</a> </li>");
-//                     	res.write("<li><a href='https://reveauchocolat-gifts.herokuapp.com/'>Gifts</a> </li>");
-//                     	res.write("<li><a href='https://ajmiller00.github.io/Midterm/workshops_events.html'>Events</a> </li>");
-//                     	res.write("<li><a href='https://ajmiller00.github.io/Midterm/contact.html' >Contact Us</a> </li></ul></nav>");
+
+       			res.write("<header><a href='https://ajmiller00.github.io/Midterm/index.html'><img src='https://ajmiller00.github.io/Midterm/logo-06.png' class='header'/></a><nav>");
+                	res.write("<ul><li><a href='https://ajmiller00.github.io/Midterm/about_us.html'>About Us</a></li>");
+                    	res.write("<li><a style = 'text-decoration: underline; text-underline-position: under; box-sizing: border-box;' href='https://reveauchocolat-products.herokuapp.com/'>Shop</a> </li>");
+                    	res.write("<li><a href='https://ajmiller00.github.io/Midterm/catering.html'>Catering</a> </li>");
+                    	res.write("<li><a href='https://reveauchocolat-gifts.herokuapp.com/'>Gifts</a> </li>");
+                    	res.write("<li><a href='https://ajmiller00.github.io/Midterm/workshops_events.html'>Events</a> </li>");
+                    	res.write("<li><a href='https://ajmiller00.github.io/Midterm/contact.html' >Contact Us</a> </li></ul></nav>");
 
     			res.write("<div class='burger' id = 'bur'><img src='burger.png' class='burger' onclick='show()'></div><div class='oBurger' id = 'burger'>");
                 	res.write("<ul id = 'burgerUl'><li><a href='https://ajmiller00.github.io/Midterm/about_us.html'>About Us</a></li>");
