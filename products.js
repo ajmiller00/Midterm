@@ -324,6 +324,8 @@ app.post('/add', (req, res) => {
 				res.write("</table>");
 				res.write("<form method = 'POST' action = '/checkout'>")
 				res.write("<input type = 'submit' value = 'Checkout' class = 'button'></input>")
+			    	res.write("<br>")
+			    	res.write("<br>")
 				res.write("</form>")
 				res.write("</div>")
 			});
