@@ -3,9 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600;700&display=swap" rel="stylesheet">
     <title>Login</title>
-    <link rel = "stylesheet" type = "text/css" href = "https://ajmiller00.github.io/Midterm/style_haijun.css">
     <link rel = "stylesheet" type = "text/css" href = "https://ajmiller00.github.io/Midterm/style.css">
+    <link rel = "stylesheet" type = "text/css" href = "https://ajmiller00.github.io/Midterm/style_haijun.css">
     <style type = "text/css">
         body {
             text-align:center;
@@ -14,7 +20,7 @@
         .input_row {
             text-align:left;
             position:relative;
-            left:33%;
+            left:35%;
         }
         form {
             margin-right:auto;
@@ -25,26 +31,33 @@
     </style>
 </head>
 <body>
-    <div id = 'login'>
-    <!-- header here -->
-    <h1>Login</h1>
-    <form onclick = "dosomething">
-        <div class = "input_row">
-            <label>Email </label>
+
+    <div id = "login">
+        <!-- header here -->
+        <h1>Login</h1>
+        <form onclick = "dosomething">
+            <div class = "input_row">
+                <label>Email </label>
+                <br>
+                <input type = "text" class = "text">
+            </div>
+            <div class = "input_row">
+                <label>Password</label>
+                <br>
+                <input type = "text" class = "text">
+            </div>
             <br>
-            <input type = "text" class = "text">
-        </div>
-        <div class = "input_row">
-            <label>Password</label>
+            <input type = "submit" value = "Sign In" class = "button">
+            <!-- Once they submit access a node js file to add to database -->
             <br>
-            <input type = "text" class = "text">
-        </div>
-        
-        <input type = "submit" value = "Sign In" class = "button">
-        <!-- Once they submit access a node js file to add to database -->
-        <br/>
-        <a class = "link" href = "https://ajmiller00.github.io/Midterm/signup.html">New Customer? Sign up for an account</a>
-    </form>
+            <br>
+            <div>
+                <a class = "link" href = "https://ajmiller00.github.io/Midterm/signup.html">New Customer? Sign up for an account</a>
+                <br><br>
+            </div>
+            
+        </form>
     </div>
+    
 </body>
 </html>
