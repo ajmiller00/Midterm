@@ -11,7 +11,7 @@
     cursor:pointer;
     -webkit-border-radius: 5px;
     border-radius: 4px;
-
+    text-align:center;
 }
 
 .link {
