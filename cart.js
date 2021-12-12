@@ -5,7 +5,8 @@ const url = "mongodb+srv://amille26:cs20final@cluster0.ktqrs.mongodb.net/reveauc
 const express = require('express');
 const { runInContext } = require('vm');
 const app = express();
-const PORT = 8080;
+var port = process.env.PORT || 3000;
+// var port = 8080;
 const client = new MongoClient(url);
 app.use(express.static('public'));
 // app.use('/css', express.static(__dirname + '/public/css'));
@@ -68,4 +69,4 @@ app.post('/checkout', (req, res) => {
     res.send("Your order has been processed");
 })
 
-app.listen(PORT);
+app.listen(port);
