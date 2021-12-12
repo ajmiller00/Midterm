@@ -53,7 +53,7 @@ app.get('/', (req, res) => {
                   	res.write("<li><a href='https://reveauchocolat-cart.herokuapp.com/' style='padding:10px 20px; background-color: #ff9933; color: #003267;border: none;margin-top:  10px;cursor:pointer;-webkit-border-radius: 5px;border-radius: 4px;'>My Cart</a> </li>");
               		res.write("</ul></nav>");
 
-          		res.write("<div class='burger' id = 'bur'><img src='burger.png' class='burger' onclick='show()'></div>");
+          		res.write("<div class='burger' id = 'bur'><img src='https://ajmiller00.github.io/Midterm/burger.png' class='burger' onclick='show()'></div>");
 			res.write("<div class='oBurger' id = 'burger'><ul id = 'burgerUl'>");
 			res.write("<li><a class = 'burger' href='https://ajmiller00.github.io/Midterm/about_us.html'>About Us</a> </li><li><a style = 'text-decoration: underline; text-underline-position: under; box-sizing: border-box;' href='https://reveauchocolat-products.herokuapp.com/'>Shop</a> </li>");
                   	res.write("<li><a class = 'burger' href='https://ajmiller00.github.io/Midterm/catering.html'>Catering</a> </li>");
