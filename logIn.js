@@ -25,7 +25,7 @@ exports.LogInAuth = async (email, password) => {
             // console.log("yaaaas we made it");
             name = items[i].email.toString();
           } else {
-            name = "no";
+            name = "FAILURE";
           }
         }
       } catch (e) {

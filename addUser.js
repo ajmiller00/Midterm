@@ -19,7 +19,7 @@ exports.addUser = async function (pdata) {
             	} else {
                     if (items.length > 0) {
                         console.log("Email already exists");
-                        return "This email already has an account associated with it. Please try another email."
+                        return "FAILURE"
                     } else {
                         let salt = (Math.random() + 1).toString(36).substring(7);
                         var password = crypto.createHash('md5').update(salt + pdata['pass']).digest('hex');
@@ -30,6 +30,7 @@ exports.addUser = async function (pdata) {
                             if(err) { console.log("Insert Error: " + err); return; }
                             console.log("New document inserted!");
                         });
+                        return pdata['email'];
                     }
             	}
 
