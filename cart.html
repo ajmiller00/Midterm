@@ -3,8 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600;700&display=swap" rel="stylesheet">
     <title>Cart</title>
-    <link rel = "stylesheet" type = "text/css" href = "style_haijun.css">
+    <link rel = "stylesheet" type = "text/css" href = "https://github.com/ajmiller00/Midterm/blob/main/style.css">
+    <link rel = "stylesheet" type = "text/css" href = "https://github.com/ajmiller00/Midterm/blob/main/style_haijun.css">
     <style type = "text/css">
         body {
             text-align:center;
@@ -22,29 +29,50 @@
         .border-bottom {
             border-bottom: 3px solid #e2e2e2;
         }
+        #cart {
+            background-color: #FCECC8;
+        }
     </style>
 </head>
 
 <body>
-    <h1>Shopping Cart</h1>
-    <!--get all the things from other pages-->
-    <a class = "link" href = "products.html" >Continue Shopping</a>
-    <table id = "Products">
-        <thead>
-            <th style = "width: 50%;">Description</th>
-            <th style = "width: 15%;">Price</th>
-            <th style = "width: 15%;">Quantity</th>
-            <th style = "width: 20%;">Total</th>
-        </thead>
-        <tr>
-            <th class = "border-bottom"></th>
-            <th class = "border-bottom"></th>
-            <th class = "border-bottom"></th>
-            <th class = "border-bottom"></th>
-        </tr>
-    </table>
-    <form name = "checkout">
-        <input type = "submit" value = "Checkout" class = "button">
-    </form>
+    <header>
+        <!-- <a href="index.html"><img src="logo-06.png" class="header"/></a> -->
+        <nav>
+            <ul>
+                <li><a href="index.html" style = "padding-left = 1%;">Home</a> </li>
+                <li><a href="about_us.html">About Us</a> </li>
+                <li><a style = "text-decoration: underline; text-underline-position: under; box-sizing: border-box;" href="products.html">Shop</a> </li>
+                <li><a href="catering.html">Catering</a> </li>
+                <li><a href="gifts.html">Gifts</a> </li>
+                <li><a href="workshops_events.html">Events</a> </li>
+                <li><a href="contact.html" >Contact Us</a> </li>
+            </ul>
+        </nav>
+
+        <div class="burger" id = "bur">
+            <!-- <img src="burger.png" class="burger" onclick="show()"> -->
+        </div>
+
+        <div class="oBurger" id = "burger">
+            <ul id = "burgerUl">
+                <li><a href="index.html">Home</a> </li>
+                <li><a href="about_us.html">About Us</a> </li>
+                <li><a style = "text-decoration: underline; text-underline-position: under; box-sizing: border-box;" href="products.html">Shop</a> </li>
+                <li><a href="catering.html">Catering</a> </li>
+                <li><a href="gifts.html">Gifts</a> </li>
+                <li><a href="workshops_events.html">Events</a> </li>
+                <li><a href="contact.html" >Contact Us</a> </li>
+            </ul>
+        </div>
+
+
+    </header>
+    <div id = "cart">
+        <h1>Shopping Cart</h1>
+        <!--get all the things from other pages-->
+        <a class = "link" href = "products.html" >Continue Shopping</a>
+    </div>
+    
 </body>
 </html>
