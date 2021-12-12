@@ -185,7 +185,7 @@ app.get('/', (req, res) => {
     			res.write("<footer>&copy; 2021 Rêve au Chocolat – 23 Fausse Street, Cambridge, MA – (617) 555 0113</footer> </body> </html>");
 
 		    } 
-		    
+		    	res.end();
 		  	db.close();
 		});
 
@@ -265,14 +265,12 @@ app.get('/', (req, res) => {
 								}
 							}
 						)
-						res.write("You added to Cart");
 					})
 
 				}
 			});
 		}); // end finding curr user
     })
-    res.end();
 })
 
 });
