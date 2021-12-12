@@ -41,7 +41,9 @@ app.get('/', (req, res) => {
        			res.write("#products { background-color: #FCECC8; } #message { text-align:center; } #submit { text-align:center; }");
         		res.write("@media (max-width: 991px) { .column { width: 50%; } } @media (max-width:767px) { .img { max-width:200px; } }");
        			res.write("@media (max-width:479px) { h4 { font-size:20px; } .img { max-width: 150px; } } </style></head>");
-
+			fs.readFile("https://ajmiller00.github.io/Midterm/header.html", function (err, txt) {
+					res.write(txt);
+			})
        			res.write("<header><a href='https://ajmiller00.github.io/Midterm/index.html'><img src='https://ajmiller00.github.io/Midterm/logo-06.png' class='header'/></a><nav>");
                 	res.write("<ul><li><a href='https://ajmiller00.github.io/Midterm/about_us.html'>About Us</a></li>");
                     	res.write("<li><a style = 'text-decoration: underline; text-underline-position: under; box-sizing: border-box;' href='https://reveauchocolat-products.herokuapp.com/'>Shop</a> </li>");
@@ -242,11 +244,11 @@ app.post("/add", function (req, res) {
 				console.log(item, index);
 				if (numItems > 12) {
 					var productQuery = {
-						id : item
+						id : String(item)
 					};
 				} else {
 					var productQuery = {
-						id: item,
+						id: String(item),
 						gifts: true
 					}
 				}
@@ -269,7 +271,6 @@ app.post("/add", function (req, res) {
 				
 			}
 		});
-	db.close();
 	res.end();
     })
 	
