@@ -2,10 +2,10 @@
   "name": "final",
   "version": "1.0.0",
   "description": "Reve Au Chocolat",
-  "main": "products.js",
+  "main": "cart.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node products.js"
+    "start": "node cart.js"
   },
   "author": "",
   "license": "ISC",
