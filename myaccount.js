@@ -1,7 +1,8 @@
 // imports
 const express = require("express")
 const app = express()
-const port = 3000
+var port = process.env.PORT || 3000;
+// var port = 8080;
 const http = require('http')
 var fs = require('fs');
 var qs = require('querystring');
