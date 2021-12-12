@@ -16,35 +16,65 @@
     </head>
     <body>
         <header>
-            <a href="index.html"><img src="logo-06.png" class="header"/></a>
-            <nav>
-                <ul>
-                    <li><a href="about_us.html">About Us</a> </li>
-                    <li><a href="products.html">Shop</a> </li>
-                    <li><a href="catering.html">Catering</a> </li>
-                    <li><a style = "text-decoration: underline; text-underline-position: under; box-sizing: border-box;" href="gifts.html">Gifts</a> </li>
-                    <li><a href="workshops_events.html">Events</a> </li>
-                    <li><a href="contact.html" >Contact Us</a> </li>
-                </ul>
-            </nav>
-
-            <div class="burger" id = "bur">
-                <img src="burger.png" class="burger" onclick="show()">
+          <div class="a" style="text-align:center; position: relative;">
+            <div class="loginburger" style="position:absolute;">
+              <img src='https://ajmiller00.github.io/Midterm/acc_icon.png' width="30px">
+              <a class = "burger" href="https://reveauchocolat-myaccount.herokuapp.com/">Profile</a>
+              <a class = "burger" href="https://reveauchocolat-login.herokuapp.com/">Log In</a>
             </div>
 
-            <div class="oBurger" id = "burger">
-                <ul id = "burgerUl">
-                    <li><a href="about_us.html">About Us</a> </li>
-                    <li><a href="products.html">Shop</a> </li>
-                    <li><a href="catering.html">Catering</a> </li>
-                    <li><a style = "text-decoration: underline; text-underline-position: under; box-sizing: border-box;" href="gifts.html">Gifts</a> </li>
-                    <li><a href="workshops_events.html">Events</a> </li>
-                    <li><a href="contact.html" >Contact Us</a> </li>
-                </ul>
+            <div class="logo" style="display: inline-block;">
+              <a href="https://ajmiller00.github.io/Midterm/index.html"><img src="https://ajmiller00.github.io/Midterm/logo-06.png" class="header"/></a>
             </div>
+          </div>
 
+          <nav>
+              <ul>
+                  <li><a href="https://ajmiller00.github.io/Midterm/about_us.html">About Us</a> </li>
+                  <li><a href="https://reveauchocolat-products.herokuapp.com/">Shop</a> </li>
+                  <li><a href="https://ajmiller00.github.io/Midterm/catering.html">Catering</a> </li>
+                  <li><a style = "text-decoration: underline; text-underline-position: under; box-sizing: border-box;" href="https://reveauchocolat-gifts.herokuapp.com/">Gifts</a> </li>
+                  <li><a href="https://ajmiller00.github.io/Midterm/workshops_events.html">Events</a> </li>
+                  <li><a href="https://ajmiller00.github.io/Midterm/contact.html" >Contact Us</a> </li>
+                  <li><a href="https://reveauchocolat-cart.herokuapp.com/" style="padding:10px 20px;
+                  background-color: #ff9933;
+                  color: #003267;
+                  border: none;
+                  margin-top:  10px;
+                  cursor:pointer;
+                  -webkit-border-radius: 5px;
+                  border-radius: 4px;">My Cart</a> </li>
+              </ul>
+          </nav>
 
-        </header>
+          <div class="burger" id = "bur">
+              <img src="burger.png" class="burger" onclick="show()">
+          </div>
+
+          <div class="oBurger" id = "burger">
+              <ul id = "burgerUl">
+                  <li><a class = "burger" href="https://ajmiller00.github.io/Midterm/about_us.html">About Us</a> </li>
+                  <li><a class = "burger" href="https://reveauchocolat-products.herokuapp.com/">Shop</a> </li>
+                  <li><a class = "burger" href="https://ajmiller00.github.io/Midterm/catering.html">Catering</a> </li>
+                  <li><a class = "burger" style = "text-decoration: underline; text-underline-position: under; box-sizing: border-box;" href="https://reveauchocolat-gifts.herokuapp.com/">Gifts</a> </li>
+                  <li><a class = "burger" href="https://ajmiller00.github.io/Midterm/workshops_events.html">Events</a> </li>
+                  <li><a class = "burger" href="https://ajmiller00.github.io/Midterm/contact.html" >Contact Us</a> </li>
+                  <li></li>
+                  <li></li>
+                  <li><a class = "burger" href="https://reveauchocolat-cart.herokuapp.com/">My Cart</a></li>
+              </ul>
+          </div>
+      </header>
+
+        <script type="text/javascript">
+        function show() {
+            if (document.getElementById("burger").style.display == "none") {
+                document.getElementById("burger").style.display = "block";
+            } else {
+                document.getElementById("burger").style.display = "none";
+            }
+        }
+        </script>
 
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~Javascript~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
