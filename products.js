@@ -269,14 +269,14 @@ app.post('/add', (req, res) => {
 								}
 							}
 						)
-						res.write("Added to Cart");
 					})
 
 				}
 			});
 		}); // end finding curr user
+	    res.write("Added to Cart");
+	    res.end();
     })
-    res.end();
 })
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
