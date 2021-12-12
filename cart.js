@@ -6,8 +6,8 @@ const express = require('express');
 const { runInContext } = require('vm');
 const app = express();
 
-// var port = process.env.PORT || 3000;
-var port = 8080;
+var port = process.env.PORT || 3000;
+// var port = 8080;
 
 const client = new MongoClient(url);
 app.use(express.static('public'));
