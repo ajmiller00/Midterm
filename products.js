@@ -276,7 +276,7 @@ app.post('/add', (req, res) => {
 			});
 		}); // end finding curr user
     })
-    
+    res.end();
 })
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
