@@ -322,4 +322,8 @@ app.post('/add', (req, res) => {
     })
 })
 
+app.post('/checkout', (req, res) => {
+    res.send("Your order has been processed");
+})
+
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
