@@ -4,6 +4,11 @@ var qs = require('querystring');
 const express = require('express');
 const app = express();
 const MongoClient = require('mongodb').MongoClient;
+const bodyParser = require("body-parser");
+
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
 const url = "mongodb+srv://amille26:cs20final@cluster0.ktqrs.mongodb.net/reveauchocolat?retryWrites=true&w=majority";
 
 var port = process.env.PORT || 3000;
@@ -68,7 +73,7 @@ app.get('/', (req, res) => {
             	res.write("<h3 style='display:inline'> <a id='choo' href=#st>Signature Truffles</a> &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp;</h3>");
             	res.write("<h3 style='display:inline'> <a id='choo' href=#chocoBakery>Chocolate Bakery</a> &nbsp; &nbsp; &nbsp;</h3></div><br><br>");
                 
-			res.write("<form method = 'POST' action = '/add'>")
+			res.write("<form method = 'POST' action = 'https://reveauchocolat-products.herokuapp.com/'>")
 		    	res.write("<script language = 'javascript'>");
     			res.write("function product(name, cost) { this.name = name; this.cost = cost; } ");
 		    	res.write("menuItems = new Array(");
@@ -180,28 +185,19 @@ app.get('/', (req, res) => {
     			res.write("<footer>&copy; 2021 Rêve au Chocolat – 23 Fausse Street, Cambridge, MA – (617) 555 0113</footer> </body> </html>");
 
 		    } 
-		    res.end();
+		    
 		  	db.close();
 		});
 
 	});
-
-});
-
-const bodyParser = require("body-parser");
-
-app.use(bodyParser.urlencoded({
-    extended: true
-}));
-
-app.post('/add', (req, res) => {
-    MongoClient.connect(url, { useUnifiedTopology: true }, function(err, db) {
-	if (err) throw err;
-	var numItems = String(req.body.item);
-    var dbo = db.db('reveauchocolat');
-	var products = dbo.collection('products');
-	var currUser = dbo.collection('current');
-	var user = dbo.collection('users');
+	req.on('data', data => {
+		MongoClient.connect(url, { useUnifiedTopology: true }, function(err, db) {
+		if (err) throw err;
+		var numItems = String(req.body.item);
+	    	var dbo = db.db('reveauchocolat');
+		var products = dbo.collection('products');
+		var currUser = dbo.collection('current');
+		var user = dbo.collection('users');
 		let quan = [];
 		quan.push(req.body.quan0);
 		quan.push(req.body.quan1);
@@ -278,5 +274,8 @@ app.post('/add', (req, res) => {
     })
     res.end();
 })
+
+});
+
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
