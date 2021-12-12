@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel = "stylesheet" type = "text/css" href = "style_haijun.css">
+    <link rel = "stylesheet" type = "text/css" href = "https://github.com/ajmiller00/Midterm/blob/main/style_haijun.css">
     <style type = "text/css">
         body {
             text-align:center;
@@ -20,21 +20,34 @@
         }
     </style>
 </head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/core.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/md5.js"></script>
+<script type="text/javascript">
+    function validation() {
+        if (document.getElementById("password").value != "" && document.getElementById("email").value != "") {
+            return true;
+        }
+        alert("Please fill all indicated fields!");
+        return false;
+    }
+
+</script>
+
 <body>
     <!-- header here -->
     <h1>Login</h1>
-    <form onclick = "dosomething">
+    <form method ='post'  action='http://localhost:8080/login' onsubmit="return validation()">
         <div class = "input_row">
-            <label>Email </label>
+            <label>Email* </label>
             <br>
-            <input type = "text" class = "text">
+            <input name = "email" id="email" type = "text" class = "text">
         </div>
         <div class = "input_row">
-            <label>Password</label>
+            <label>Password*</label>
             <br>
-            <input type = "text" class = "text">
+            <input id="password" name = "password" type = "password" class = "text">
         </div>
-        
+
         <input type = "submit" value = "Sign In" class = "button">
         <!-- Once they submit access a node js file to add to database -->
         <br/>
