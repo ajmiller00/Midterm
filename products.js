@@ -14,7 +14,7 @@ const url = "mongodb+srv://amille26:cs20final@cluster0.ktqrs.mongodb.net/reveauc
 var port = process.env.PORT || 3000;
 // var port = 8080;
 
-app.get('/', (req, res) => {
+app.post('/', (req, res) => {
 
     MongoClient.connect(url, { useUnifiedTopology: true }, function(err, db) {
         if(err) { console.log("Connection err: " + err); return; }
