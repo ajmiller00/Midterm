@@ -225,15 +225,15 @@ div.total {
 
 @media (max-width: 500px) {
     nav ul li {
-        padding-left: 1%;
-        padding-right: 2.8%;
+        padding-left: 0px;
+        padding-right: 0px;
     }
 }
 
 @media (max-width: 1028px) {
     nav ul li {
-        padding-left: 1%;
-        padding-right: 2.8%;
+        padding-left: 0px;
+        padding-right: 0px;
     }
 }
 
