@@ -223,7 +223,7 @@ div.total {
     color: #f93;
 }
 
-@media (max-width: 1270px) {
+@media (max-width: 1100px) {
     nav ul li {
         padding-left: 1%;
         padding-right: 2.8%;
