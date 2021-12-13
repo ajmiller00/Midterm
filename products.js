@@ -271,6 +271,14 @@ app.post('/add', (req, res) => {
 			var query = {
 				email : currUser.email
 			}
+			user.findOneAndUpdate(
+				query,
+				{ $unset: {cart: {
+					car_item: "",
+					cart_quantity: 0,
+					cart_price: 0
+				}}}
+			)
 			quan.forEach(function(item, index, array) {
 				// If user quantity is not zero
 				if ((item != "0") && (item != undefined))
