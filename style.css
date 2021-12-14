@@ -231,7 +231,7 @@ div.total {
 }
 
 
-@media (max-width: 1400px) {
+@media (max-width: 1300px) {
     nav {
         display: none;
     }
