@@ -314,7 +314,6 @@ app.post('/add', (req, res) => {
 	    res.write("<a href =\"https://reveauchocolat-cart.herokuapp.com/\">View Your Cart Here </a> <br><br><br>")
 	    res.write("</div>");
 	    res.write("<footer>&copy; 2021 Rêve au Chocolat – 23 Fausse Street, Cambridge, MA – (617) 555 0113</footer>")
-	    db.close();
 	    res.end();
     })
 })
