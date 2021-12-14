@@ -230,14 +230,8 @@ div.total {
     }
 }
 
-@media (max-width: 1028px) {
-    nav ul li {
-        padding-left: 1.5%;
-        padding-right: 4%;
-    }
-}
 
-@media (max-width: 910px) {
+@media (max-width: 1200px) {
     nav {
         display: none;
     }
